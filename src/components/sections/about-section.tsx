@@ -19,7 +19,7 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="container">
-      <div className="text-center mb-16 scroll-reveal"> {/* Increased margin bottom */}
+      <div className="text-center mb-16 scroll-reveal">
         <h2 className="font-headline text-5xl font-bold text-primary flex items-center justify-center">
           <Sparkles className="mr-3 h-10 w-10" />
           About Me
@@ -33,20 +33,25 @@ export default function AboutSection() {
             className="relative group w-full max-w-sm sm:max-w-md aspect-[4/5] rounded-lg overflow-hidden 
                        shadow-2xl hover:shadow-primary/50 transition-all duration-500 ease-in-out 
                        transform hover:scale-105"
-            // Removed inline backgroundImage style, rely on theme or add simpler pattern if needed
           >
+            {/* Subtle diagonal line pattern background */}
+            <div className="absolute inset-0 -z-10 opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(-45deg, hsl(var(--border)), hsl(var(--border)) 1px, transparent 1px, transparent 10px)' }}></div>
             <Image 
-              src="https://placehold.co/400x500.png" 
+              src="https://storage.googleapis.com/builder-prod.appspot.com/unsafe/builderip/builder-assets/v1/user-assets/user_f76e1491413046098027c07f2c500652/projects/project_a891f5f7229a4c69948e686c87016e4d/images/20240726101950_image_0.jpeg" 
               alt="Krish Goenka - Profile Picture" 
               fill
               objectFit="cover"
-              data-ai-hint="professional portrait Krish Goenka futuristic"
+              data-ai-hint="Krish Goenka profile"
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
               className="rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-110"
               priority
             />
             {/* Adding a subtle overlay or border effect */}
             <div className="absolute inset-0 rounded-lg border-2 border-primary/30 group-hover:border-primary/70 transition-all duration-500 pointer-events-none"></div>
+             {/* Glow effect for hover */}
+            <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
+                 style={{boxShadow: '0 0 25px 5px hsl(var(--primary)/0.7), 0 0 40px 10px hsl(var(--primary)/0.5)'}}>
+            </div>
           </div>
         </div>
 
