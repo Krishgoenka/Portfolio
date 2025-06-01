@@ -1,6 +1,7 @@
+
 "use client";
-import React, { useRef } from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
+import React, { useRef, useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { handleAIShowcase } from '@/app/actions/ai-actions';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
@@ -28,7 +29,7 @@ function SubmitButton() {
 
 export default function InteractiveAIShowcaseSection() {
   useScrollReveal();
-  const [state, formAction] = useFormState(handleAIShowcase, initialState);
+  const [state, formAction] = useActionState(handleAIShowcase, initialState);
   const formRef = useRef<HTMLFormElement>(null);
 
   React.useEffect(() => {
