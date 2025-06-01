@@ -32,27 +32,24 @@ export default function AboutSection() {
           <div
             className="relative group w-full max-w-sm sm:max-w-md aspect-[4/5] rounded-lg overflow-hidden
                        shadow-2xl hover:shadow-primary/50 transition-all duration-500 ease-in-out
-                       transform hover:scale-105 float-animation" // Added float-animation
+                       transform hover:scale-105 float-animation"
           >
-            {/* Enhanced background pattern */}
-            <div className="absolute inset-0 -z-10 opacity-30" // Increased opacity
-                 style={{ backgroundImage: 'repeating-linear-gradient(-45deg, hsl(var(--primary)/0.15), hsl(var(--primary)/0.15) 1px, transparent 1px, transparent 15px)' }}> 
+            <div className="absolute inset-0 -z-10 opacity-30"
+                 style={{ backgroundImage: 'repeating-linear-gradient(-45deg, hsl(var(--primary)/0.15), hsl(var(--primary)/0.15) 1px, transparent 1px, transparent 15px)' }}>
             </div>
             <Image
-              src="https://storage.googleapis.com/builder-prod.appspot.com/unsafe/builderip/builder-assets/v1/user-assets/user_f76e1491413046098027c07f2c500652/projects/project_a891f5f7229a4c69948e686c87016e4d/images/20240726101950_image_0.jpeg"
+              src="https://drive.google.com/uc?export=view&id=1Zv-HOET7uIhj8lsnnbaJoXt8xTdNs-Ce"
               alt="Krish Goenka - Profile Picture"
               fill
               objectFit="cover"
-              data-ai-hint="Krish Goenka profile"
+              data-ai-hint="Krish Goenka profile picture"
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
               className="rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-110"
               priority
             />
-            {/* Adding a subtle border effect */}
             <div className="absolute inset-0 rounded-lg border-2 border-primary/30 group-hover:border-primary/70 transition-all duration-500 pointer-events-none"></div>
-             {/* Enhanced glow effect for hover */}
             <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                 style={{boxShadow: '0 0 35px 10px hsl(var(--primary)/0.6), 0 0 60px 20px hsl(var(--primary)/0.3)'}}> 
+                 style={{boxShadow: '0 0 35px 10px hsl(var(--primary)/0.6), 0 0 60px 20px hsl(var(--primary)/0.3)'}}>
             </div>
           </div>
         </div>
