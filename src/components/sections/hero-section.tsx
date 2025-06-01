@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState, useEffect } from 'react';
 import TypingAnimation from '@/components/typing-animation';
@@ -24,11 +25,12 @@ export default function HeroSection() {
       <Image 
         src="https://placehold.co/1920x1080.png" 
         alt="AI themed background" 
-        layout="fill" 
+        fill // Replaced layout="fill" with fill={true}
         objectFit="cover" 
         className="absolute inset-0 -z-10 opacity-20"
-        data-ai-hint="neural network data stream"
+        data-ai-hint="dynamic AI tech icons" // Updated hint
         priority
+        sizes="100vw"
       />
       <div className="absolute inset-0 -z-20 bg-background opacity-50"></div>
 

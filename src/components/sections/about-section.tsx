@@ -1,3 +1,4 @@
+
 "use client";
 import React from 'react';
 import Image from 'next/image';
@@ -26,13 +27,14 @@ export default function AboutSection() {
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="scroll-reveal">
           <Card className="overflow-hidden shadow-xl">
-            <div className="relative h-64 w-full">
+            <div className="relative h-80 w-full"> {/* Increased height for better portrait display */}
               <Image 
-                src="https://placehold.co/600x400.png" 
-                alt="Krish Goenka coding silhouette" 
-                layout="fill" 
+                src="https://placehold.co/400x500.png" // Placeholder for user's image, 4:5 ratio
+                alt="Krish Goenka - Profile Picture" 
+                fill // Replaced layout="fill" with fill={true}
                 objectFit="cover"
-                data-ai-hint="coding silhouette"
+                data-ai-hint="professional portrait Krish Goenka" // Updated hint for user's image
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-primary-foreground">
