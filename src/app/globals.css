@@ -5,45 +5,44 @@
 
 @layer base {
   :root {
-    --background: 220 40% 5%; /* Very dark, slightly desaturated blue */
-    --foreground: 220 15% 90%; /* Light cool gray */
+    --background: 220 30% 8%; /* Darker, slightly more saturated blue */
+    --foreground: 210 15% 85%; /* Soft, light gray */
 
-    --muted: 220 20% 12%; /* Darker muted */
-    --muted-foreground: 220 15% 55%; /* Muted text */
+    --muted: 220 20% 15%; /* Darker muted for subtlety */
+    --muted-foreground: 210 15% 60%; /* Muted text */
 
-    --popover: 220 30% 8%; /* Dark popover */
-    --popover-foreground: 220 15% 90%; /* Light text for popover */
+    --popover: 220 25% 10%; /* Dark popover background */
+    --popover-foreground: 210 15% 85%; /* Light text for popover */
 
-    --card: 220 30% 10%; /* Dark card background */
-    --card-foreground: 220 15% 90%; /* Light text for card */
+    --card: 220 25% 12%; /* Dark card background */
+    --card-foreground: 210 15% 85%; /* Light text for card */
 
-    --border: 220 20% 20%; /* Subtle border */
-    --input: 220 20% 20%; /* Dark input background */
+    --border: 220 15% 25%; /* Softer border color */
+    --input: 220 15% 25%; /* Dark input background matching border */
 
-    --primary: 190 90% 50%; /* Vibrant Cyan/Electric Blue */
-    --primary-foreground: 220 40% 5%; /* Dark text for primary buttons */
+    --primary: 200 90% 55%;    /* Vivid Sky Blue - New Main Color */
+    --primary-foreground: 220 30% 10%; /* Dark text for primary buttons, good contrast */
 
-    --secondary: 220 25% 15%; /* Dark secondary */
-    --secondary-foreground: 220 15% 80%; /* Lighter secondary text */
+    --secondary: 220 20% 18%; /* Darker secondary for less emphasis */
+    --secondary-foreground: 210 15% 75%; /* Lighter secondary text */
 
-    --accent: 330 90% 55%; /* Vibrant Magenta */
-    --accent-foreground: 0 0% 100%; /* White text for accent */
+    --accent: 150 80% 45%;     /* Vibrant Teal/Sea Green - New Accent Color */
+    --accent-foreground: 0 0% 100%; /* White text for accent buttons */
 
-    --destructive: 0 70% 50%; /* Destructive red */
+    --destructive: 0 70% 50%; /* Standard Destructive red */
     --destructive-foreground: 0 0% 100%; /* White text for destructive */
 
-    --ring: 190 90% 55%; /* Ring color, slightly brighter primary */
+    --ring: 200 90% 60%; /* Ring color based on new primary, slightly brighter */
 
     --radius: 0.5rem;
 
-    --chart-1: 190 90% 50%; /* Vibrant Cyan */
-    --chart-2: 330 90% 55%; /* Vibrant Magenta */
-    --chart-3: 210 80% 60%; /* Bright Blue */
-    --chart-4: 150 70% 45%; /* Emerald Green */
-    --chart-5: 45 100% 50%; /* Bright Yellow/Gold */
+    --chart-1: 200 90% 55%; /* New primary for charts */
+    --chart-2: 150 80% 45%; /* New accent for charts */
+    --chart-3: 220 70% 65%; /* A complementary lighter blue for charts */
+    --chart-4: 45 100% 50%;  /* Gold/Yellow - good contrast for charts */
+    --chart-5: 280 70% 60%; /* A contrasting Purple for charts */
   }
 
-  /* Removed .dark specific overrides to enforce the new theme as default */
 }
 
 @layer base {
@@ -68,7 +67,6 @@
   box-shadow: 0 0 8px hsl(var(--primary)),
               0 0 15px hsl(var(--primary)),
               0 0 25px hsl(var(--primary)/0.7);
-  /* color: hsl(var(--primary-foreground)); Ensure text color enhances glow */
 }
 
 .neon-glow-accent {
@@ -78,7 +76,6 @@
   box-shadow: 0 0 8px hsl(var(--accent)),
               0 0 15px hsl(var(--accent)),
               0 0 25px hsl(var(--accent)/0.7);
-   /* color: hsl(var(--accent-foreground)); */
 }
 
 .certificate-shine::before {
