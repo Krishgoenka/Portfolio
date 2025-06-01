@@ -1,83 +1,49 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 210 20% 98%; /* Very light cool gray */
-    --foreground: 210 10% 23%; /* Dark cool gray */
+    --background: 220 40% 5%; /* Very dark, slightly desaturated blue */
+    --foreground: 220 15% 90%; /* Light cool gray */
 
-    --muted: 210 15% 94%;
-    --muted-foreground: 210 10% 45%;
+    --muted: 220 20% 12%; /* Darker muted */
+    --muted-foreground: 220 15% 55%; /* Muted text */
 
-    --popover: 210 20% 100%;
-    --popover-foreground: 210 10% 23%;
+    --popover: 220 30% 8%; /* Dark popover */
+    --popover-foreground: 220 15% 90%; /* Light text for popover */
 
-    --card: 210 20% 100%;
-    --card-foreground: 210 10% 23%;
+    --card: 220 30% 10%; /* Dark card background */
+    --card-foreground: 220 15% 90%; /* Light text for card */
 
-    --border: 210 10% 88%;
-    --input: 210 10% 88%;
+    --border: 220 20% 20%; /* Subtle border */
+    --input: 220 20% 20%; /* Dark input background */
 
-    --primary: 175 70% 40%; /* Strong Teal */
-    --primary-foreground: 0 0% 100%; /* White Text */
+    --primary: 190 90% 50%; /* Vibrant Cyan/Electric Blue */
+    --primary-foreground: 220 40% 5%; /* Dark text for primary buttons */
 
-    --secondary: 210 15% 90%;
-    --secondary-foreground: 210 10% 23%;
+    --secondary: 220 25% 15%; /* Dark secondary */
+    --secondary-foreground: 220 15% 80%; /* Lighter secondary text */
 
-    --accent: 30 90% 55%; /* Vibrant Orange */
-    --accent-foreground: 0 0% 100%; /* White Text */
+    --accent: 330 90% 55%; /* Vibrant Magenta */
+    --accent-foreground: 0 0% 100%; /* White text for accent */
 
-    --destructive: 0 70% 55%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 70% 50%; /* Destructive red */
+    --destructive-foreground: 0 0% 100%; /* White text for destructive */
 
-    --ring: 175 70% 40%; /* Teal */
+    --ring: 190 90% 55%; /* Ring color, slightly brighter primary */
 
     --radius: 0.5rem;
 
-    --chart-1: 175 70% 40%; /* Teal */
-    --chart-2: 30 90% 55%; /* Orange */
-    --chart-3: 220 65% 60%; /* Softer Blue */
-    --chart-4: 50 80% 50%; /* Yellow/Gold */
-    --chart-5: 300 60% 60%; /* Magenta */
+    --chart-1: 190 90% 50%; /* Vibrant Cyan */
+    --chart-2: 330 90% 55%; /* Vibrant Magenta */
+    --chart-3: 210 80% 60%; /* Bright Blue */
+    --chart-4: 150 70% 45%; /* Emerald Green */
+    --chart-5: 45 100% 50%; /* Bright Yellow/Gold */
   }
 
-  .dark {
-    --background: 210 15% 12%; /* Very dark cool gray */
-    --foreground: 210 10% 85%; /* Light cool gray */
-
-    --muted: 210 10% 20%;
-    --muted-foreground: 210 10% 55%;
-
-    --popover: 210 15% 15%;
-    --popover-foreground: 210 10% 85%;
-
-    --card: 210 15% 15%;
-    --card-foreground: 210 10% 85%;
-
-    --border: 210 10% 25%;
-    --input: 210 10% 25%;
-
-    --primary: 175 65% 50%; /* Brighter Teal for dark mode */
-    --primary-foreground: 210 20% 98%; /* Almost white text */
-
-    --secondary: 210 10% 22%;
-    --secondary-foreground: 210 10% 85%;
-
-    --accent: 30 85% 60%; /* Brighter Orange for dark mode */
-    --accent-foreground: 210 15% 12%; /* Dark text on accent for contrast */
-
-    --destructive: 0 60% 50%;
-    --destructive-foreground: 0 0% 98%;
-
-    --ring: 175 65% 50%; /* Teal */
-
-    --chart-1: 175 65% 50%;
-    --chart-2: 30 85% 60%;
-    --chart-3: 220 60% 65%;
-    --chart-4: 50 75% 55%;
-    --chart-5: 300 55% 65%;
-  }
+  /* Removed .dark specific overrides to enforce the new theme as default */
 }
 
 @layer base {
@@ -99,20 +65,20 @@
   transition: all 0.3s ease;
 }
 .neon-glow-primary:hover {
-  box-shadow: 0 0 5px hsl(var(--primary)),
-              0 0 10px hsl(var(--primary)),
-              0 0 15px hsl(var(--primary));
-  color: hsl(var(--primary-foreground)); /* Ensure text color remains readable or enhances glow */
+  box-shadow: 0 0 8px hsl(var(--primary)),
+              0 0 15px hsl(var(--primary)),
+              0 0 25px hsl(var(--primary)/0.7);
+  /* color: hsl(var(--primary-foreground)); Ensure text color enhances glow */
 }
 
 .neon-glow-accent {
   transition: all 0.3s ease;
 }
 .neon-glow-accent:hover {
-  box-shadow: 0 0 5px hsl(var(--accent)),
-              0 0 10px hsl(var(--accent)),
-              0 0 15px hsl(var(--accent));
-   color: hsl(var(--accent-foreground)); /* Ensure text color remains readable or enhances glow */
+  box-shadow: 0 0 8px hsl(var(--accent)),
+              0 0 15px hsl(var(--accent)),
+              0 0 25px hsl(var(--accent)/0.7);
+   /* color: hsl(var(--accent-foreground)); */
 }
 
 .certificate-shine::before {
@@ -124,9 +90,9 @@
   height: 100%;
   background: linear-gradient(
     120deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0) 100%
+    hsla(var(--foreground)/0) 0%,
+    hsla(var(--foreground)/0.1) 50%,
+    hsla(var(--foreground)/0) 100%
   );
   transform: skewX(-25deg);
   transition: left 0.75s;

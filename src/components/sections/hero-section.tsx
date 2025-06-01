@@ -21,35 +21,36 @@ export default function HeroSection() {
   const introText = "Hi, I’m Krish Goenka — an AI/ML Enthusiast.";
   
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-gradient-to-br from-background to-secondary/30">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-gradient-to-br from-background to-muted/50">
       <Image 
         src="https://placehold.co/1920x1080.png" 
-        alt="AI themed background" 
-        fill // Replaced layout="fill" with fill={true}
+        alt="Futuristic AI background" 
+        fill
         objectFit="cover" 
-        className="absolute inset-0 -z-10 opacity-20"
-        data-ai-hint="dynamic AI tech icons" // Updated hint
+        className="absolute inset-0 -z-10 opacity-10 dark:opacity-5" // Reduced opacity for dark theme
+        data-ai-hint="digital code matrix rain" 
         priority
         sizes="100vw"
       />
-      <div className="absolute inset-0 -z-20 bg-background opacity-50"></div>
+      {/* Subtle animated gradient or particle effect placeholder */}
+      <div className="absolute inset-0 -z-20 animate-pulse bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/0.1)_0%,transparent_60%)]"></div>
 
 
       <div className="container z-10 px-4">
-        <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+        <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground">
           <TypingAnimation text={introText} speed={50} onComplete={() => setTaglineVisible(true)} />
         </h1>
         
         {taglineVisible && (
           <p 
             className="font-headline text-xl sm:text-2xl md:text-3xl text-primary mb-10 float-animation"
-            style={{ transform: `translateY(${offsetY * 0.1}px)` }} // Subtle parallax
+            style={{ transform: `translateY(${offsetY * 0.1}px)` }} 
           >
             Turning Intelligence into Innovation.
           </p>
         )}
 
-        <Button asChild size="lg" className="neon-glow-accent rounded-full shadow-lg">
+        <Button asChild size="lg" className="neon-glow-accent rounded-full shadow-lg text-lg px-8 py-6">
           <Link href="#about">
             Discover More <ArrowDown className="ml-2 h-5 w-5" />
           </Link>
