@@ -17,7 +17,7 @@ export default function HeroSection() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const introText = "Hi, I’m Krish Goenka — an AI/ML & Generative AI Enthusiast, Innovator, and Second-Year CSE AI student at Techno India University.";
+  const introText = "Hi, I’m Krish Goenka — an AI/ML Enthusiast.";
   
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-gradient-to-br from-background to-secondary/30">
