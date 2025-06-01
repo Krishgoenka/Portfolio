@@ -24,17 +24,33 @@ export default function AboutSection() {
         <p className="text-xl text-muted-foreground mt-2">My journey into the world of AI.</p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-12 items-start">
-        <div className="scroll-reveal flex flex-col items-center md:items-start">
-          <div className="relative w-full max-w-sm h-auto aspect-[4/5] rounded-lg overflow-hidden shadow-xl mb-8 md:mb-0">
+      <div className="grid md:grid-cols-2 gap-12 items-center"> {/* Changed items-start to items-center for better vertical alignment */}
+        <div className="scroll-reveal flex flex-col items-center md:items-start justify-center"> {/* Added justify-center */}
+          <div 
+            className="relative group w-full max-w-xs sm:max-w-sm aspect-[4/5] rounded-xl overflow-hidden 
+                       shadow-xl hover:shadow-primary/40 transition-all duration-300 ease-in-out 
+                       transform hover:scale-105 mb-8 md:mb-0"
+            style={{
+              backgroundImage: `
+                repeating-linear-gradient(
+                  -45deg,
+                  hsl(var(--muted)/0.08),
+                  hsl(var(--muted)/0.08) 12px,
+                  hsl(var(--border)/0.08) 12px,
+                  hsl(var(--border)/0.08) 24px
+                )
+              `
+            }}
+          >
             <Image 
               src="https://placehold.co/400x500.png" 
               alt="Krish Goenka - Profile Picture" 
               fill
               objectFit="cover"
               data-ai-hint="professional portrait Krish Goenka"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="rounded-lg"
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
+              className="rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-110"
+              priority
             />
           </div>
         </div>
@@ -48,14 +64,14 @@ export default function AboutSection() {
                 My journey in AI began not with a textbook, but with a question: <br/> "How can machines think smarter, not harder?"
               </p>
             </div>
-          <Card className="shadow-xl">
+          <Card className="shadow-xl bg-card/70 backdrop-blur-sm"> {/* Added some transparency and blur to card */}
             <CardHeader>
               <CardTitle className="font-headline text-2xl">Key Milestones</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-4">
                 {milestones.map((milestone, index) => (
-                  <li key={index} className="flex items-start space-x-3 p-3 rounded-lg hover:bg-muted transition-colors">
+                  <li key={index} className="flex items-start space-x-3 p-3 rounded-lg hover:bg-muted/80 transition-colors">
                     <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                     <div>
                       <span className="font-semibold text-foreground">{milestone.event}</span>
