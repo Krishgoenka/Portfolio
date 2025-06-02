@@ -23,7 +23,7 @@ export default function HeroSection() {
         alt="Futuristic AI background" 
         fill
         objectFit="cover" 
-        className="absolute inset-0 -z-10 opacity-30 dark:opacity-20"
+        className="absolute inset-0 -z-10 opacity-100"
         data-ai-hint="abstract circuits" 
         priority
         sizes="100vw"
