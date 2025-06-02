@@ -5,42 +5,42 @@
 
 @layer base {
   :root {
-    --background: 220 30% 8%; /* Darker, slightly more saturated blue */
-    --foreground: 210 15% 85%; /* Soft, light gray */
+    --background: 220 40% 5%; /* Very dark, desaturated blue */
+    --foreground: 210 15% 85%;
 
-    --muted: 220 20% 15%; /* Darker muted for subtlety */
-    --muted-foreground: 210 15% 60%; /* Muted text */
+    --muted: 220 20% 15%;
+    --muted-foreground: 210 15% 60%;
 
-    --popover: 220 25% 10%; /* Dark popover background */
-    --popover-foreground: 210 15% 85%; /* Light text for popover */
+    --popover: 220 25% 10%;
+    --popover-foreground: 210 15% 85%;
 
-    --card: 220 25% 12%; /* Dark card background */
-    --card-foreground: 210 15% 85%; /* Light text for card */
+    --card: 220 25% 12%;
+    --card-foreground: 210 15% 85%;
 
-    --border: 220 15% 25%; /* Softer border color */
-    --input: 220 15% 25%; /* Dark input background matching border */
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
 
-    --primary: 200 90% 55%;    /* Vivid Sky Blue - New Main Color */
-    --primary-foreground: 220 30% 10%; /* Dark text for primary buttons, good contrast */
+    --primary: 200 90% 55%;    /* Vivid Sky Blue - Main Color */
+    --primary-foreground: 220 30% 10%;
 
-    --secondary: 220 20% 18%; /* Darker secondary for less emphasis */
-    --secondary-foreground: 210 15% 75%; /* Lighter secondary text */
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 15% 75%;
 
-    --accent: 150 80% 45%;     /* Vibrant Teal/Sea Green - New Accent Color */
-    --accent-foreground: 0 0% 100%; /* White text for accent buttons */
+    --accent: 150 80% 45%;     /* Vibrant Teal/Sea Green - Accent Color */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 70% 50%; /* Standard Destructive red */
-    --destructive-foreground: 0 0% 100%; /* White text for destructive */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --ring: 200 90% 60%; /* Ring color based on new primary, slightly brighter */
+    --ring: 200 90% 60%;
 
     --radius: 0.5rem;
 
-    --chart-1: 200 90% 55%; /* New primary for charts */
-    --chart-2: 150 80% 45%; /* New accent for charts */
-    --chart-3: 220 70% 65%; /* A complementary lighter blue for charts */
-    --chart-4: 45 100% 50%;  /* Gold/Yellow - good contrast for charts */
-    --chart-5: 280 70% 60%; /* A contrasting Purple for charts */
+    --chart-1: 200 90% 55%;
+    --chart-2: 150 80% 45%;
+    --chart-3: 220 70% 65%;
+    --chart-4: 45 100% 50%;
+    --chart-5: 280 70% 60%;
   }
 
 }
@@ -53,6 +53,24 @@
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    z-index: 0;
+  }
+
+  body::before {
+    content: "";
+    position: fixed; /* Changed to fixed to cover viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.05) 1px, transparent 1px), /* Softer grid lines */
+      linear-gradient(to right, hsl(var(--border) / 0.05) 1px, transparent 1px); /* Softer grid lines */
+    background-size: 2.5rem 2.5rem; /* Grid size */
+    opacity: 0.5; /* Grid opacity */
+    z-index: -1; 
+    pointer-events: none;
   }
 
   section {

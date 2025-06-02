@@ -1,96 +1,90 @@
+
 "use client";
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Brain, Layers, Bot, Cpu, Code, Settings, Database, Cloud, BarChartBig } from 'lucide-react';
-import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend, Tooltip } from 'recharts';
+import { Brain, Layers, Bot, Cpu, Code, Settings, Database, Cloud, Briefcase, Palette } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/use-scroll-spy';
 
-const skillsData = [
-  { name: 'Machine Learning', icon: <Brain className="h-8 w-8 text-primary" />, proficiency: 90, description: "SVM, Regression, KMeans, Random Forest" },
-  { name: 'Deep Learning', icon: <Layers className="h-8 w-8 text-primary" />, proficiency: 85, description: "CNNs, RNNs, ANNs" },
-  { name: 'Generative AI', icon: <Bot className="h-8 w-8 text-primary" />, proficiency: 80, description: "Transformers, LLMs, RAG, GANs" },
-  { name: 'AI Agents', icon: <Cpu className="h-8 w-8 text-primary" />, proficiency: 75, description: "Autonomous Systems, Multi-Agent Systems" },
-  { name: 'Programming', icon: <Code className="h-8 w-8 text-primary" />, proficiency: 95, description: "Python, C, C++, Java, JavaScript, HTML, CSS" },
-  { name: 'DevOps & Cloud', icon: <Cloud className="h-8 w-8 text-primary" />, proficiency: 70, description: "Docker, Kubernetes, GCP, AWS, Firebase" },
-  { name: 'Databases', icon: <Database className="h-8 w-8 text-primary" />, proficiency: 80, description: "SQL, NoSQL (MongoDB, Firebase Firestore)" },
-  { name: 'Frameworks & Tools', icon: <Settings className="h-8 w-8 text-primary" />, proficiency: 85, description: "TensorFlow, PyTorch, Scikit-learn, Langchain, Next.js, React, Node.js, Git" },
+const skillCategories = [
+  {
+    categoryName: 'AI/ML Core & Specializations',
+    icon: <Brain className="h-8 w-8 text-primary" />,
+    skills: [
+      { name: 'Machine Learning', description: "Classical algorithms (SVM, Regression, Clustering, Decision Trees), ensemble methods (Random Forests, Gradient Boosting)." },
+      { name: 'Deep Learning', description: "Architectures (CNNs, RNNs, LSTMs, Transformers), training techniques, optimization." },
+      { name: 'Computer Vision', description: "Image classification, object detection, segmentation, image generation." },
+      { name: 'Natural Language Processing', description: "Text analysis, sentiment analysis, NMT, summarization, question answering." },
+    ]
+  },
+  {
+    categoryName: 'Generative AI & AI Agents',
+    icon: <Bot className="h-8 w-8 text-primary" />,
+    skills: [
+      { name: 'Large Language Models (LLMs)', description: "Prompt engineering, fine-tuning, RAG, LLM Ops, model evaluation." },
+      { name: 'Generative Models', description: "GANs, VAEs, Diffusion Models for image and data synthesis." },
+      { name: 'AI Agent Development', description: "Building autonomous agents, multi-agent systems, planning, tool use." },
+    ]
+  },
+  {
+    categoryName: 'Software & Data Engineering',
+    icon: <Code className="h-8 w-8 text-primary" />,
+    skills: [
+      { name: 'Programming Languages', description: "Python (Advanced), TypeScript/JavaScript, C/C++, Java." },
+      { name: 'Data Engineering', description: "ETL pipelines, data warehousing, Big Data tools (Spark, Hadoop - basic understanding)." },
+      { name: 'Databases', description: "SQL (PostgreSQL, MySQL), NoSQL (MongoDB, Firebase Firestore), Vector Databases (Pinecone, Milvus)." },
+    ]
+  },
+  {
+    categoryName: 'Tools, Platforms & DevOps',
+    icon: <Settings className="h-8 w-8 text-primary" />,
+    skills: [
+      { name: 'AI/ML Frameworks', description: "TensorFlow, PyTorch, Keras, Scikit-learn, Hugging Face Transformers." },
+      { name: 'GenAI Development Tools', description: "LangChain, LlamaIndex, Genkit, Vertex AI, OpenAI API." },
+      { name: 'Web Development', description: "Next.js, React, Node.js, FastAPI, Flask." },
+      { name: 'DevOps & MLOps', description: "Git, Docker, Kubernetes (basic), CI/CD (GitHub Actions), Cloud Platforms (GCP, Firebase, basic AWS/Azure)." },
+    ]
+  }
 ];
-
-const radarChartData = skillsData.map(skill => ({
-  subject: skill.name.split(" ")[0], // Use first word for brevity
-  A: skill.proficiency,
-  fullMark: 100,
-}));
-
 
 export default function SkillsSection() {
   useScrollReveal();
   
-  const [isClient, setIsClient] = React.useState(false);
-  React.useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-
   return (
     <section id="skills" className="bg-secondary/30">
       <div className="container">
-        <div className="text-center mb-12 scroll-reveal">
+        <div className="text-center mb-16 scroll-reveal">
           <h2 className="font-headline text-4xl font-bold">My Toolkit</h2>
-          <p className="text-xl text-muted-foreground mt-2">The technologies and skills I work with.</p>
+          <p className="text-xl text-muted-foreground mt-2">The technologies and skills I leverage to build intelligent solutions.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {skillsData.map((skill, index) => (
-            <div key={skill.name} className="scroll-reveal" style={{animationDelay: `${index * 100}ms`}}>
-              <Card className="h-full hover:shadow-xl transition-shadow duration-300">
-                <CardHeader className="flex flex-row items-center gap-4 pb-2">
-                  {React.cloneElement(skill.icon, { className: "h-10 w-10 text-primary bounce-in-icon" })}
-                  <CardTitle className="font-headline text-xl">{skill.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">{skill.description}</p>
-                </CardContent>
-              </Card>
+        <div className="space-y-12">
+          {skillCategories.map((category, catIndex) => (
+            <div key={category.categoryName} className="scroll-reveal" style={{animationDelay: `${catIndex * 150}ms`}}>
+              <div className="flex items-center mb-6">
+                {React.cloneElement(category.icon, { className: "h-10 w-10 text-primary mr-4 bounce-in-icon" })}
+                <h3 className="font-headline text-3xl text-accent">{category.categoryName}</h3>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+                {category.skills.map((skill, skillIndex) => (
+                  <div key={skill.name} className="scroll-reveal" style={{animationDelay: `${(catIndex * category.skills.length + skillIndex) * 50}ms`}}>
+                    <Card className="h-full hover:shadow-xl transition-shadow duration-300 bg-card/70 backdrop-blur-sm">
+                      <CardHeader className="pb-3">
+                        <CardTitle className="font-headline text-xl text-foreground">{skill.name}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-muted-foreground">{skill.description}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
-
-        <div className="scroll-reveal">
-          <Card className="shadow-xl">
-            <CardHeader>
-              <CardTitle className="font-headline text-2xl flex items-center"><BarChartBig className="mr-2 h-6 w-6 text-primary"/>Skill Proficiency Overview</CardTitle>
-              <CardDescription>A visual representation of my comfort level with key skill areas.</CardDescription>
-            </CardHeader>
-            <CardContent className="h-[400px] w-full">
-              {isClient && (
-                <ResponsiveContainer width="100%" height="100%">
-                  <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarChartData}>
-                    <defs>
-                      <linearGradient id="colorSkill" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.8}/>
-                        <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0.2}/>
-                      </linearGradient>
-                    </defs>
-                    <PolarGrid stroke="hsl(var(--border))" />
-                    <PolarAngleAxis dataKey="subject" tick={{ fill: 'hsl(var(--foreground))', fontSize: 12 }} />
-                    <PolarRadiusAxis angle={30} domain={[0, 100]} tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 10 }} />
-                    <Radar name="Krish" dataKey="A" stroke="hsl(var(--primary))" fill="url(#colorSkill)" fillOpacity={0.6} />
-                    <Legend wrapperStyle={{ color: 'hsl(var(--foreground))' }} />
-                    <Tooltip
-                      contentStyle={{
-                        backgroundColor: 'hsl(var(--background))',
-                        borderColor: 'hsl(var(--border))',
-                        borderRadius: 'var(--radius)',
-                        color: 'hsl(var(--foreground))'
-                      }}
-                      itemStyle={{ color: 'hsl(var(--foreground))' }}
-                    />
-                  </RadarChart>
-                </ResponsiveContainer>
-              )}
-            </CardContent>
-          </Card>
+        <div className="text-center mt-16 scroll-reveal">
+            <p className="text-lg text-muted-foreground">
+                I am a firm believer in lifelong learning and continuously strive to expand my expertise in the ever-evolving field of AI.
+            </p>
         </div>
       </div>
     </section>

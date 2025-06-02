@@ -1,3 +1,4 @@
+
 "use client";
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -18,7 +19,7 @@ export interface Project {
   outcome?: string;
   liveLink?: string;
   repoLink?: string;
-  gifUrl?: string; // For mini live animation
+  gifUrl?: string; 
   gifHint?: string;
 }
 
@@ -33,7 +34,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <Dialog>
       <Card 
-        className="overflow-hidden h-full flex flex-col hover:shadow-2xl transition-all duration-300 certificate-shine animate-slide-in-left"
+        className="overflow-hidden h-full flex flex-col hover:shadow-2xl transition-all duration-300 certificate-shine animate-slide-in-left bg-card/80 backdrop-blur-sm"
         style={{ animationDelay: `${index * 150}ms` }}
         onMouseEnter={() => project.gifUrl && setShowGif(true)}
         onMouseLeave={() => project.gifUrl && setShowGif(false)}
@@ -43,17 +44,19 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
              <Image 
                 src={project.gifUrl} 
                 alt={`${project.title} animation`} 
-                layout="fill" 
+                fill
                 objectFit="cover" 
                 data-ai-hint={project.gifHint || "project animation"}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
           ) : (
             <Image 
               src={project.imageUrl} 
               alt={project.title} 
-              layout="fill" 
+              fill
               objectFit="cover" 
               data-ai-hint={project.imageHint || "project technology"}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           )}
         </div>
@@ -68,10 +71,17 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             ))}
           </div>
         </CardContent>
-        <CardFooter className="mt-auto">
+        <CardFooter className="mt-auto flex justify-between items-center gap-2">
           <DialogTrigger asChild>
-            <Button variant="outline" className="w-full neon-glow-primary">View Details</Button>
+            <Button variant="outline" className="neon-glow-primary flex-grow">View Details</Button>
           </DialogTrigger>
+          {project.repoLink && (
+            <Button asChild variant="ghost" size="icon" className="neon-glow-accent !p-2" title="View Code on GitHub">
+              <a href={project.repoLink} target="_blank" rel="noopener noreferrer" aria-label="View Project Code on GitHub">
+                <Github className="h-5 w-5" />
+              </a>
+            </Button>
+          )}
         </CardFooter>
       </Card>
 
@@ -82,7 +92,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             {project.shortDescription}
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-6 py-4 text-sm">
+        <div className="grid gap-6 py-4 text-sm max-h-[70vh] overflow-y-auto pr-3">
           {project.longDescription && <p>{project.longDescription}</p>}
           
           {project.gifUrl && (
@@ -90,9 +100,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                <Image 
                   src={project.gifUrl} 
                   alt={`${project.title} animation`} 
-                  layout="fill" 
+                  fill 
                   objectFit="contain"
                   data-ai-hint={project.gifHint || "project demo"}
+                  sizes="(max-width: 625px) 100vw, 570px"
                 />
             </div>
           )}
