@@ -18,17 +18,17 @@ export default function HeroSection() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const introText = "Hi, I’m Krish Goenka — an AI/ML Enthusiast.";
+  const introText = "Welcome";
   
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-gradient-to-br from-background to-muted/50">
       <Image 
-        src="https://placehold.co/1920x1080.png" 
+        src="https://drive.google.com/uc?export=view&id=1CIlUwNsru1BI1SQVQyvR0ka-HlRA8Ml2" 
         alt="Futuristic AI background" 
         fill
         objectFit="cover" 
-        className="absolute inset-0 -z-10 opacity-10 dark:opacity-5" // Reduced opacity for dark theme
-        data-ai-hint="digital code matrix rain" 
+        className="absolute inset-0 -z-10 opacity-10 dark:opacity-5"
+        data-ai-hint="digital abstract" 
         priority
         sizes="100vw"
       />
