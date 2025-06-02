@@ -7,11 +7,11 @@ import { CheckCircle, Sparkles } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/use-scroll-spy';
 
 const milestones = [
-  { year: "2022", event: "Embarked on B.Tech in CSE (AI)" },
-  { year: "2023", event: "Ventured into National Hackathons (ISRO)" },
-  { year: "2023", event: "Launched Resume Advisor ATS" },
-  { year: "2024", event: "IIT Delhi E-Summit Campus Ambassador" },
-  { year: "2024", event: "AI Unite Hackathon Finalist" },
+  { year: "2022", event: "Embarked on B.Tech in CSE (AI Specialization)" },
+  { year: "2023", event: "First National Hackathon Participation (ISRO)" },
+  { year: "2023", event: "Developed & Launched 'Resume Advisor ATS' - AI Project" },
+  { year: "2024", event: "Selected as IIT Delhi E-Summit Campus Ambassador" },
+  { year: "2024", event: "Achieved Finalist Position in AI Unite Hackathon" },
 ];
 
 export default function AboutSection() {
@@ -42,7 +42,7 @@ export default function AboutSection() {
               alt="Krish Goenka - Profile Picture"
               fill
               objectFit="cover"
-              data-ai-hint="Krish Goenka profile picture"
+              data-ai-hint="Krish Goenka profile"
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
               className="rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-110"
               priority
@@ -57,7 +57,7 @@ export default function AboutSection() {
         <div className="scroll-reveal space-y-8">
            <div>
               <p className="text-lg leading-relaxed mb-4 text-foreground/90">
-                Driven by an insatiable curiosity, I transform complex AI concepts into tangible, real-world applications. From pioneering AI-driven systems to excelling in national hackathons like ISRO & AI Unite, my work is a testament to blending innovative thought with precise execution.
+                My passion lies in transforming complex AI concepts into tangible, real-world applications. I thrive on challenges, from developing innovative AI-driven systems to competing in national hackathons like ISRO & AI Unite, where I blend creative problem-solving with precise execution.
               </p>
               <p className="text-xl italic text-primary font-medium">
                 "The best way to predict the future is to invent it." <br/> – This philosophy fuels my AI exploration.

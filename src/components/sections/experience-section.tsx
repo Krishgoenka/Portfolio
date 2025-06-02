@@ -1,7 +1,8 @@
+
 "use client";
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Briefcase, CalendarDays, Users, Presentation, Lightbulb, Wrench, MapPin } from 'lucide-react';
+import { CalendarDays, Users, Presentation, MapPin } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/use-scroll-spy';
 
 interface ExperienceItem {
@@ -18,25 +19,17 @@ const experiences: ExperienceItem[] = [
     role: 'Core Lead, AIML Facilitator',
     organization: 'GDG on Campus @ Techno India',
     duration: '2023 - Present',
-    description: 'Leading AI/ML initiatives, organizing workshops, and fostering a community of AI enthusiasts on campus. Facilitated sessions on Generative AI and Machine Learning fundamentals.',
+    description: 'Leading AI/ML initiatives, organizing impactful workshops, and fostering a vibrant community of AI enthusiasts on campus. Facilitated engaging sessions on Generative AI and core Machine Learning fundamentals.',
     icon: <Users className="h-6 w-6 text-primary" />,
     location: 'Kolkata, West Bengal'
   },
   {
     role: 'AI/ML Workshop Head',
-    organization: 'Techno Vivarta (Tech Fest)',
-    duration: 'Annual Event 2023 & 2024',
-    description: 'Headed the planning and execution of AI/ML workshops during the annual tech fest. Developed content, coordinated speakers, and managed logistics for hands-on sessions.',
+    organization: 'Techno Vivarta (Annual Tech Fest)',
+    duration: '2023 & 2024',
+    description: 'Spearheaded the planning and execution of AI/ML workshops for the university\'s annual tech fest. Responsibilities included curriculum development, speaker coordination, and managing logistics for hands-on learning experiences.',
     icon: <Presentation className="h-6 w-6 text-primary" />,
     location: 'Techno India University'
-  },
-  {
-    role: 'Summer Intern - AI Research',
-    organization: 'InnovateAI Labs (Hypothetical)',
-    duration: 'June 2023 - Aug 2023',
-    description: 'Contributed to research on optimizing large language models for specific domain tasks. Worked on data preprocessing, model fine-tuning, and performance evaluation.',
-    icon: <Lightbulb className="h-6 w-6 text-primary" />,
-    location: 'Remote'
   },
 ];
 

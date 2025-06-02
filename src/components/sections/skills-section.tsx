@@ -2,7 +2,7 @@
 "use client";
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Brain, Layers, Bot, Cpu, Code, Settings, Database, Cloud, Briefcase, Palette } from 'lucide-react';
+import { Brain, Bot, Code, Settings } from 'lucide-react'; // Code icon might be unused now
 import { useScrollReveal } from '@/hooks/use-scroll-spy';
 
 const skillCategories = [
@@ -26,22 +26,11 @@ const skillCategories = [
     ]
   },
   {
-    categoryName: 'Software & Data Engineering',
-    icon: <Code className="h-8 w-8 text-primary" />,
-    skills: [
-      { name: 'Programming Languages', description: "Python (Advanced), TypeScript/JavaScript, C/C++, Java." },
-      { name: 'Data Engineering', description: "ETL pipelines, data warehousing, Big Data tools (Spark, Hadoop - basic understanding)." },
-      { name: 'Databases', description: "SQL (PostgreSQL, MySQL), NoSQL (MongoDB, Firebase Firestore), Vector Databases (Pinecone, Milvus)." },
-    ]
-  },
-  {
-    categoryName: 'Tools, Platforms & DevOps',
+    categoryName: 'AI Development Tools & Platforms',
     icon: <Settings className="h-8 w-8 text-primary" />,
     skills: [
-      { name: 'AI/ML Frameworks', description: "TensorFlow, PyTorch, Keras, Scikit-learn, Hugging Face Transformers." },
+      { name: 'AI/ML Frameworks', description: "TensorFlow, Keras, Scikit-learn, Hugging Face Transformers." },
       { name: 'GenAI Development Tools', description: "LangChain, LlamaIndex, Genkit, Vertex AI, OpenAI API." },
-      { name: 'Web Development', description: "Next.js, React, Node.js, FastAPI, Flask." },
-      { name: 'DevOps & MLOps', description: "Git, Docker, Kubernetes (basic), CI/CD (GitHub Actions), Cloud Platforms (GCP, Firebase, basic AWS/Azure)." },
     ]
   }
 ];
