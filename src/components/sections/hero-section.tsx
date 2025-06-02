@@ -19,19 +19,19 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-muted/50">
       <Image 
-        src="https://drive.google.com/uc?export=view&id=1CIlUwNsru1BI1SQVQyvR0ka-HlRA8Ml2" 
+        src="https://drive.google.com/uc?export=view&id=1jyq2xRuyBw9lBOaLDriNgfPUJBL-1g0W" 
         alt="Futuristic AI background" 
         fill
         objectFit="cover" 
         className="absolute inset-0 -z-10 opacity-10 dark:opacity-5"
-        data-ai-hint="digital abstract" 
+        data-ai-hint="abstract circuits" 
         priority
         sizes="100vw"
       />
       {/* Subtle animated gradient or particle effect placeholder */}
       <div className="absolute inset-0 -z-20 animate-pulse bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/0.1)_0%,transparent_60%)]"></div>
 
-      <div className="container z-10 px-4 text-left"> {/* Changed text-center to text-left */}
+      <div className="container z-10 px-4 text-left"> 
         <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground">
           Hello, Krish Goenka
         </h1>
