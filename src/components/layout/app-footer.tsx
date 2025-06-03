@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Github, Code } from 'lucide-react'; 
+import { Mail, Linkedin, Github, Code } from 'lucide-react';
 
 export default function AppFooter() {
   return (
@@ -18,7 +18,7 @@ export default function AppFooter() {
             <rect width="100%" height="100%" fill="url(#footerPattern)" />
           </svg>
         </div>
-        
+
         <h2 className="font-headline text-4xl font-bold text-foreground mb-6">Let’s Connect</h2>
         <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
           I’m passionate about leveraging AI to build innovative solutions. Let’s collaborate and create something impactful.
@@ -35,20 +35,20 @@ export default function AppFooter() {
             </a>
           </Button>
           <Button asChild variant="outline" size="icon" className="neon-glow-primary rounded-full p-3 border-2 border-primary hover:bg-primary/10">
-             <a href="https://github.com/krishgoenka02" target="_blank" rel="noopener noreferrer" aria-label="Krish Goenka's Github Profile">
+             <a href="https://github.com/Krishgoenka" target="_blank" rel="noopener noreferrer" aria-label="Krish Goenka's Github Profile">
               <Github className="h-7 w-7" />
             </a>
           </Button>
         </div>
         <div className="text-sm text-muted-foreground">
           <div className="flex items-center justify-center gap-1 mb-2">
-            <Code className="h-4 w-4 text-primary" /> 
+            <Code className="h-4 w-4 text-primary" />
             <span>Designed & Developed by Krish Goenka</span>
           </div>
           &copy; {new Date().getFullYear()}. All rights reserved.
           <p className="mt-1">Built with Next.js, Tailwind CSS, and a touch of AI magic.</p>
         </div>
-         
+
         <div className="absolute inset-x-0 bottom-0 h-1/2 -z-10 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
       </div>
     </footer>
