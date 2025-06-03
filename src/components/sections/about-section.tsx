@@ -7,11 +7,11 @@ import { CheckCircle, Sparkles, UserCircle } from 'lucide-react'; // Added UserC
 import { useScrollReveal } from '@/hooks/use-scroll-spy';
 
 const milestones = [
-  { year: "2022", event: "Embarked on B.Tech in CSE (AI Specialization)" },
-  { year: "2023", event: "First National Hackathon Participation (ISRO)" },
-  { year: "2023", event: "Developed & Launched 'Resume Advisor ATS' - AI Project" },
-  { year: "2024", event: "Selected as IIT Delhi E-Summit Campus Ambassador" },
-  { year: "2024", event: "Achieved Finalist Position in AI Unite Hackathon" },
+  { year: "2022", event: "Commenced Bachelor of Technology in CSE (AI Specialization) at Techno India University." },
+  { year: "2023", event: "Applied AI to space technology challenges in the ISRO National Hackathon." },
+  { year: "2023", event: "Led development & deployment of 'Resume Advisor ATS,' an AI-driven career tool." },
+  { year: "2024", event: "Selected as IIT Delhi E-Summit Campus Ambassador, promoting innovation." },
+  { year: "2024", event: "Achieved Finalist in AI Unite Hackathon for an innovative AI healthcare solution." },
 ];
 
 export default function AboutSection() {
