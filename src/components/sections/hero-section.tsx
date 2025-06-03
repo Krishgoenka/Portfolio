@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image'; // Temporarily comment out next/image
 import { ArrowDown } from 'lucide-react';
 
 export default function HeroSection() {
@@ -25,15 +25,19 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       
-      {/* GIF Background using next/image */}
+      {/* GIF Background using standard img tag */}
       <div className="absolute inset-0 w-full h-full -z-10">
-        <Image
+        <img
           src="/hero.gif" 
           alt="Animated AI data plexus background"
-          fill
-          className="object-cover" 
-          unoptimized={true} 
-          data-ai-hint="animated plexus network"
+          style={{ // Explicit styling to mimic fill and object-cover
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          }}
         />
       </div>
       
