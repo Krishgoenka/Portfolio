@@ -18,40 +18,49 @@ interface Certification {
 
 const certificationsData: Certification[] = [
   {
-    id: 'gcp-aiml-badge',
-    title: 'Google Cloud AI/ML Lab Badges',
-    issuer: 'Google Cloud',
-    date: 'Ongoing',
-    imageUrl: 'https://placehold.co/400x250.png',
-    imageHint: 'Google Cloud badge',
-    verifyLink: '#',
+    id: 'microsoft-ai-challenge',
+    title: 'Microsoft AI Skills Challenge Completion',
+    issuer: 'Microsoft Learn',
+    date: 'Apr 2024', // Placeholder, please update if different
+    imageUrl: 'https://drive.google.com/uc?export=view&id=1xUlyw2zj0nfZWCIcObZGF53l_-1yfDZH',
+    imageHint: 'Microsoft AI challenge',
+    verifyLink: '#', // Placeholder, please update
   },
   {
     id: 'isro-hackathon-cert',
-    title: 'ISRO Hackathon Participation Certificate',
-    issuer: 'ISRO',
-    date: 'Dec 2023',
-    imageUrl: 'https://placehold.co/400x250.png',
-    imageHint: 'ISRO certificate',
-    verifyLink: '#',
+    title: 'Bharatiya Antariksh Hackathon: Space App Challenge 2024',
+    issuer: 'ISRO & Hack2Skill',
+    date: 'Feb 2024',
+    imageUrl: 'https://drive.google.com/uc?export=view&id=1OvvOIIwpglihakNev2XUg0yQ3ybVUJpp',
+    imageHint: 'ISRO hackathon certificate',
+    verifyLink: 'https://certificate.hack2skill.com/user/isrobahp/2024H2S07ISRO-P00712',
   },
   {
     id: 'gen-ai-google',
     title: 'Introduction to Generative AI',
-    issuer: 'Google',
+    issuer: 'Google Cloud Skills Boost',
     date: 'Jan 2024',
-    imageUrl: 'https://placehold.co/400x250.png',
-    imageHint: 'Google AI certificate',
-    verifyLink: '#',
+    imageUrl: 'https://drive.google.com/uc?export=view&id=1OkHmZm7L2VtY-BAWRs15eIx2mtTV2NW-',
+    imageHint: 'Google GenAI certificate',
+    verifyLink: 'https://www.cloudskillsboost.google/public_profiles/e467adc1-3427-4761-8a57-642ef8378d37/badges/5505890',
   },
   {
     id: 'ai-unite-finalist',
     title: 'AI Unite Hackathon Finalist',
     issuer: 'AI Unite Org',
     date: 'Mar 2024',
-    imageUrl: 'https://placehold.co/400x250.png',
-    imageHint: 'AI hackathon certificate',
-    verifyLink: '#',
+    imageUrl: 'https://drive.google.com/uc?export=view&id=1JWwNfqisjTh3Eb7KFyeNVbUQIW4oHa2N',
+    imageHint: 'AI hackathon finalist certificate',
+    verifyLink: '#', // Placeholder if no specific link
+  },
+  {
+    id: 'kaggle-intermediate-ml',
+    title: 'Intermediate Machine Learning',
+    issuer: 'Kaggle Learn',
+    date: 'Feb 2024',
+    imageUrl: 'https://drive.google.com/uc?export=view&id=12tLt5RI_P-DR21bdgK066kXQdF9Jqhiw',
+    imageHint: 'Kaggle ML certificate',
+    verifyLink: 'https://www.kaggle.com/learn/certification/krishgoenka/intermediate-machine-learning',
   },
 ];
 
@@ -78,10 +87,11 @@ export default function CertificationsSection() {
                   src={cert.imageUrl}
                   alt={cert.title}
                   fill
-                  objectFit="cover"
+                  style={{ objectFit: 'cover' }}
                   className="w-full h-auto object-cover"
                   data-ai-hint={cert.imageHint}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={index < 2} // Prioritize loading for first few cards
                 />
               </div>
               <CardContent className="p-4 bg-card/80 backdrop-blur-sm flex-grow flex flex-col justify-between">
@@ -89,7 +99,7 @@ export default function CertificationsSection() {
                   <h3 className="font-headline text-lg font-semibold text-foreground">{cert.title}</h3>
                   <p className="text-sm text-muted-foreground mb-2">{cert.issuer} - {cert.date}</p>
                 </div>
-                {cert.verifyLink && (
+                {cert.verifyLink && cert.verifyLink !== '#' && (
                    <a 
                      href={cert.verifyLink} 
                      target="_blank" 
