@@ -8,16 +8,25 @@ import { ArrowDown } from 'lucide-react';
 
 export default function HeroSection() {
   const [offsetY, setOffsetY] = useState(0);
+  const [showScrollArrow, setShowScrollArrow] = useState(true);
+
 
   const handleScroll = () => {
     if (typeof window !== 'undefined') {
       setOffsetY(window.pageYOffset);
+      if (window.pageYOffset > 100) { // Hide arrow after scrolling down a bit
+        setShowScrollArrow(false);
+      } else {
+        setShowScrollArrow(true);
+      }
     }
   };
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', handleScroll);
+      // Initial check
+      handleScroll();
       return () => window.removeEventListener('scroll', handleScroll);
     }
   }, []);
@@ -47,23 +56,24 @@ export default function HeroSection() {
           className="font-headline text-xl sm:text-2xl md:text-3xl text-primary mb-10 float-animation"
           style={{ transform: `translateY(${offsetY * 0.1}px)` }} 
         >
-          AI/ML Enthusiast
+          AI/ML Enthusiast & Innovator
         </p>
 
-        <Button asChild size="lg" className="neon-glow-accent rounded-full shadow-lg text-lg px-8 py-6">
+        <Button asChild size="lg" className="neon-glow-primary rounded-full shadow-lg text-lg px-8 py-6">
           <Link href="#about">
             Discover More <ArrowDown className="ml-2 h-5 w-5" />
           </Link>
         </Button>
       </div>
        {/* Scroll down arrow */}
-       <div 
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-primary z-10"
-        aria-hidden="true"
-      >
-        <ArrowDown size={32} />
-      </div>
+       {showScrollArrow && (
+         <div 
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-primary z-10 transition-opacity duration-300"
+          aria-hidden="true"
+        >
+          <ArrowDown size={32} />
+        </div>
+       )}
     </section>
   );
 }
-

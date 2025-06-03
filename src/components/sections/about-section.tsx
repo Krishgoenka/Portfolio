@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Sparkles, UserCircle } from 'lucide-react';
+import { CheckCircle, Sparkles, Cpu } from 'lucide-react'; // Changed UserCircle to Cpu
 import { useScrollReveal } from '@/hooks/use-scroll-spy';
 
 const milestones = [
@@ -18,8 +18,8 @@ export default function AboutSection() {
     <section id="about" className="container">
       <div className="text-center mb-16 scroll-reveal">
         <h2 className="font-headline text-5xl font-bold text-primary flex items-center justify-center">
-          <UserCircle className="mr-3 h-12 w-12" />
-          About Me
+          <Cpu className="mr-3 h-12 w-12" /> {/* Changed icon */}
+          My Journey
         </h2>
         <p className="text-xl text-muted-foreground mt-4">My evolution in the AI landscape.</p>
       </div>
@@ -55,7 +55,7 @@ export default function AboutSection() {
         <div className="space-y-8 scroll-reveal">
            <Card className="shadow-xl bg-card/80 backdrop-blur-md border border-border/50">
             <CardHeader>
-                <CardTitle className="font-headline text-3xl text-foreground">My Journey</CardTitle>
+                <CardTitle className="font-headline text-3xl text-foreground">My Story</CardTitle> {/* Changed from My Journey for variety */}
             </CardHeader>
             <CardContent className="space-y-6">
                 <p className="text-lg leading-relaxed text-foreground/90">
