@@ -39,14 +39,14 @@ export default function HeroSection() {
 
       <div className="container z-10 px-4 text-left"> 
         <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground">
-          Hello, Krish Goenka
+          Hello, I'm Krish Goenka
         </h1>
         
         <p 
           className="font-headline text-xl sm:text-2xl md:text-3xl text-primary mb-10 float-animation"
           style={{ transform: `translateY(${offsetY * 0.1}px)` }} 
         >
-          Turning Intelligence into Innovation.
+          AI/ML Enthusiast
         </p>
 
         <Button asChild size="lg" className="neon-glow-accent rounded-full shadow-lg text-lg px-8 py-6">
