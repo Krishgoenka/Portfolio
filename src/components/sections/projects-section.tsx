@@ -8,20 +8,7 @@ const projectsData: Project[] = [
     id: 'resume-advisor',
     title: 'Resume Advisor (ATS System)',
     shortDescription: 'AI-powered system for skill-gap identification and candidate-job matching.',
-    longDescription: `Resume Advisor is a cutting-edge platform developed to address the frustrations faced by job seekers due to the lack of feedback on their resumes. This innovative tool provides personalized insights into resume weaknesses, suggests skill improvements, and identifies crucial keywords for optimization, significantly enhancing job seekers' chances of success in the competitive job market.
-
-Key Features:
-• Role Selection: Users select their role as either an Applicant or HR professional.
-• Resume & JD Analysis (Applicant): Applicants upload resumes (PDF) and target job descriptions to receive personalized feedback, identify missing points, and get suggestions for improvement.
-• Job Description Analysis (HR & Applicant): HR professionals and applicants can upload job descriptions to receive a summary of resumes and a percentage match, identifying crucial points for the position.
-• Personalized Feedback: The platform analyzes resumes against job descriptions, identifies weaknesses, and suggests enhancements.
-• ATS Optimization: Helps optimize resumes for Applicant Tracking Systems (ATS) by identifying and incorporating relevant keywords.
-
-How to Use:
-1. Role Selection: Choose your role as either an Applicant or HR professional upon accessing the application.
-2. Resume Upload (Applicant): Upload your resume in PDF format to receive personalized feedback and insights into areas of improvement. Additionally, upload job descriptions of target companies to identify missing points and enhance your resume accordingly.
-3. Job Description Upload (HR and Applicant): Upload job descriptions to receive a summary of resumes and a percentage match, identifying crucial points required for the position.
-4. Implement Suggestions: Incorporate the feedback provided by "Resume Advisor" to enhance your resume or streamline your recruitment process.`,
+    longDescription: `Resume Advisor is an AI-powered platform designed to help job seekers improve their resumes. It allows users (Applicants or HR) to upload resumes (PDFs) and job descriptions. The system analyzes these documents to provide personalized feedback, identify skill gaps, suggest improvements, and optimize for Applicant Tracking Systems (ATS) by highlighting crucial keywords. The goal is to enhance a candidate's chances in the competitive job market by offering actionable insights.`,
     imageUrl: 'https://drive.google.com/uc?export=view&id=1SVN_oDaA2uUBGTha4VonAvIxpjPdxMDQ',
     imageHint: 'resume ATS',
     gifUrl: 'https://placehold.co/600x400.png',
