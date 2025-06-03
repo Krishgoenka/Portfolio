@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image'; // Restored next/image
+import Image from 'next/image';
 import { ArrowDown } from 'lucide-react';
 
 export default function HeroSection() {
@@ -29,14 +29,16 @@ export default function HeroSection() {
       <div className="absolute inset-0 -z-20 animate-pulse bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/0.1)_0%,transparent_60%)]"></div>
 
       {/* GIF Background using next/image */}
-      <Image
-        src="/hero.gif" 
-        alt="Animated AI data plexus background"
-        fill
-        className="absolute inset-0 w-full h-full object-cover -z-10 opacity-100" // GIF is at -z-10
-        unoptimized={true} // Important for GIFs
-        data-ai-hint="animated plexus network"
-      />
+      <div className="absolute inset-0 w-full h-full -z-10"> {/* Removed hero-bg-animated */}
+        <Image
+          src="/hero.gif" 
+          alt="Animated AI data plexus background"
+          fill
+          className="object-cover" 
+          unoptimized={true} // Important for GIFs
+          data-ai-hint="animated plexus network"
+        />
+      </div>
       
       <div className="container relative z-10 px-4 text-left"> {/* Content container is z-10 */}
         <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground">
