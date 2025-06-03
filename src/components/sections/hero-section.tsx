@@ -9,11 +9,17 @@ import { ArrowDown } from 'lucide-react';
 export default function HeroSection() {
   const [offsetY, setOffsetY] = useState(0);
 
-  const handleScroll = () => setOffsetY(window.pageYOffset);
+  const handleScroll = () => {
+    if (typeof window !== 'undefined') {
+      setOffsetY(window.pageYOffset);
+    }
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
   }, []);
   
   return (
@@ -23,7 +29,7 @@ export default function HeroSection() {
         alt="Futuristic AI background" 
         fill
         objectFit="cover" 
-        className="absolute inset-0 -z-10 opacity-100"
+        className="absolute inset-0 -z-10 opacity-100 hero-bg-animated"
         data-ai-hint="abstract circuits" 
         priority
         sizes="100vw"
