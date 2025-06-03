@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { ExternalLink, Github, ListChecks, Zap } from 'lucide-react';
 import React from 'react';
+import { cn } from '@/lib/utils';
 
 export interface Project {
   id: string;
@@ -19,7 +20,7 @@ export interface Project {
   outcome?: string;
   liveLink?: string;
   repoLink?: string;
-  gifUrl?: string; 
+  gifUrl?: string;
   gifHint?: string;
 }
 
@@ -30,33 +31,90 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const [showGif, setShowGif] = React.useState(false);
+  const cardRef = React.useRef<HTMLDivElement>(null);
+  const [transformStyle, setTransformStyle] = React.useState<React.CSSProperties>({});
+
+  React.useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateXRange = 6; 
+      const rotateYRange = 9;
+
+      const rotateX = ((y - centerY) / centerY) * rotateXRange;
+      const rotateY = ((centerX - x) / centerX) * rotateYRange; 
+
+      setTransformStyle({
+        transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.04)`,
+        transition: 'transform 0.05s linear'
+      });
+    };
+
+    const handleMouseLeave = () => {
+      setTransformStyle({
+        transform: 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)',
+        transition: 'transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)'
+      });
+    };
+
+    card.addEventListener('mousemove', handleMouseMove);
+    card.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      card.removeEventListener('mousemove', handleMouseMove);
+      card.removeEventListener('mouseleave', handleMouseLeave);
+      setTransformStyle({
+        transform: 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)',
+        transition: 'none'
+      });
+    };
+  }, []);
+
 
   return (
     <Dialog>
-      <Card 
-        className="overflow-hidden h-full flex flex-col hover:shadow-2xl transition-all duration-300 certificate-shine animate-slide-in-left bg-card/80 backdrop-blur-sm"
-        style={{ animationDelay: `${index * 150}ms` }}
+      <Card
+        ref={cardRef}
+        className={cn(
+          "overflow-hidden h-full flex flex-col certificate-shine animate-slide-in-left bg-card/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+        )}
+        style={{ 
+          ...transformStyle, 
+          animationDelay: `${index * 150}ms` 
+        }}
         onMouseEnter={() => project.gifUrl && setShowGif(true)}
         onMouseLeave={() => project.gifUrl && setShowGif(false)}
       >
         <div className="relative w-full h-56">
-          {showGif && project.gifUrl ? (
-             <Image 
-                src={project.gifUrl} 
-                alt={`${project.title} animation`} 
-                fill
-                objectFit="cover" 
-                data-ai-hint={project.gifHint || "project animation"}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-          ) : (
-            <Image 
-              src={project.imageUrl} 
-              alt={project.title} 
+           <Image
+            src={project.imageUrl}
+            alt={project.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover"
+            data-ai-hint={project.imageHint || "project technology"}
+            priority={index < 2} // Prioritize loading for first few cards
+          />
+          {project.gifUrl && (
+            <Image
+              src={project.gifUrl}
+              alt={`${project.title} animation`}
               fill
-              objectFit="cover" 
-              data-ai-hint={project.imageHint || "project technology"}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className={cn(
+                "object-cover absolute inset-0 transition-opacity duration-300 ease-in-out",
+                showGif ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              )}
+              data-ai-hint={project.gifHint || "project animation"}
+              unoptimized={true} // GIFs are often better unoptimized
             />
           )}
         </div>
@@ -104,6 +162,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                   objectFit="contain"
                   data-ai-hint={project.gifHint || "project demo"}
                   sizes="(max-width: 625px) 100vw, 570px"
+                  unoptimized={true}
                 />
             </div>
           )}

@@ -100,22 +100,27 @@
   content: "";
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 50%;
+  left: -150%; /* Start further left to make the shine travel across */
+  width: 75%;   /* Wider shine element */
   height: 100%;
   background: linear-gradient(
     120deg,
     hsla(var(--foreground)/0) 0%,
-    hsla(var(--foreground)/0.1) 50%,
+    hsla(var(--foreground)/0.05) 20%, /* Softer start */
+    hsla(var(--foreground)/0.15) 50%, /* More pronounced peak */
+    hsla(var(--foreground)/0.05) 80%, /* Softer end */
     hsla(var(--foreground)/0) 100%
   );
-  transform: skewX(-25deg);
-  transition: left 0.75s;
+  transform: skewX(-25deg); /* Adjust skew for desired effect */
+  transition: left 0.85s cubic-bezier(0.23, 1, 0.32, 1); /* Smoother and slightly faster transition */
+  pointer-events: none; /* Ensure it doesn't block interactions */
+  z-index: 1; /* Ensure it's above the base card content but below interactive elements */
 }
 
 .certificate-shine:hover::before {
-  left: 120%;
+  left: 150%; /* Make it travel further across the card */
 }
+
 
 .typing-cursor::after {
   content: '|';
