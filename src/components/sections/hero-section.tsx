@@ -25,12 +25,11 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-muted/50">
       <Image 
-        src="https://drive.google.com/uc?export=view&id=101xyCrefSN3PIb8kkErWB2bZbeQpGCRG" 
+        src="/hero-background.gif" // Assumes hero-background.gif is in /public
         alt="Animated AI data plexus background" 
         fill
         objectFit="cover" 
         className="absolute inset-0 -z-10 opacity-100 hero-bg-animated"
-        data-ai-hint="animated plexus network" 
         priority
         unoptimized={true} // Important for GIFs
       />
