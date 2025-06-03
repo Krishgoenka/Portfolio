@@ -26,7 +26,7 @@ const experiences: ExperienceItem[] = [
   {
     role: 'AI/ML Workshop Head',
     organization: 'Techno Vivarta (Annual Tech Fest)',
-    duration: '2023 & 2024',
+    duration: '2023 - Present',
     description: 'Spearheaded the planning and execution of AI/ML workshops for the university\'s annual tech fest. Responsibilities included curriculum development, speaker coordination, and managing logistics for hands-on learning experiences.',
     icon: <Presentation className="h-6 w-6 text-primary" />,
     location: 'Techno India University'
@@ -89,3 +89,4 @@ export default function ExperienceSection() {
     </section>
   );
 }
+
