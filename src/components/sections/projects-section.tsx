@@ -34,18 +34,19 @@ const projectsData: Project[] = [
     repoLink: 'https://github.com/Krishgoenka/Shashipath',
   },
   {
-    id: 'ai-unite-hackathon', 
+    id: 'ai-unite-hackathon',
     title: 'Brain Tumour Detection using MRI',
     shortDescription: 'AI model to detect and classify brain tumors from MRI scans.',
-    longDescription: 'Developed a deep learning model (CNN-based) to analyze MRI images for the presence of brain tumors. The system aims to assist medical professionals by highlighting potential tumorous regions and classifying tumor types, improving diagnostic accuracy and speed.',
+    longDescription: 'Developed during the AI Unite Hackathon by team nvAI, this project utilizes Machine Learning, Computer Vision, and Segmentation techniques with a CNN-based model to detect brain tumors from MRI images. The model, which achieved an 89% accuracy on its test dataset, aims to assist medical professionals by highlighting potential tumorous regions and classifying tumor types, thereby improving diagnostic accuracy and speed.',
     imageUrl: 'https://drive.google.com/uc?export=view&id=1irxxdl3Ji2fYOiW7PfXXG8BGFluf-sXW',
     imageHint: 'brain MRI',
     gifUrl: 'https://placehold.co/600x400.png',
     gifHint: 'detection animation',
-    techStack: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'DICOM', 'Flask', 'Scikit-learn'],
+    techStack: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'DICOM', 'Flask', 'Scikit-learn', 'React'],
     challenges: 'Achieving high accuracy with imbalanced datasets, handling variations in MRI scan quality, and ensuring model interpretability for medical use.',
-    outcome: 'The model achieved promising results on test datasets, demonstrating potential for clinical application. Further validation and refinement are ongoing.',
+    outcome: 'The model achieved an 89% accuracy on test data, demonstrating potential for clinical application. As part of team nvAI, this project was recognized as a Finalist in the AI Unite Hackathon. The server component is powered by Flask, hosted on a Linode instance, accepting MRI images and returning detailed JSON responses.',
     repoLink: 'https://github.com/Krishgoenka/Brain-Tumor--CNN-model',
+    liveLink: 'https://nv-ai.vercel.app/',
   },
 ];
 
