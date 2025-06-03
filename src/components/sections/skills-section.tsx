@@ -4,7 +4,6 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Brain, Bot, Code, Settings, Zap } from 'lucide-react'; 
 import { useScrollReveal } from '@/hooks/use-scroll-spy';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const skillCategories = [
   {
@@ -59,27 +58,31 @@ export default function SkillsSection() {
                 <h3 className="font-headline text-3xl lg:text-4xl text-accent text-center md:text-left">{category.categoryName}</h3>
               </div>
               
-              <div className="mt-8 flex flex-wrap justify-center gap-8 lg:gap-12">
+              <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-12">
                 {category.skills.map((skill, skillIndex) => (
-                  <TooltipProvider key={skill.name} delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <div
-                          className="scroll-reveal group relative flex flex-col items-center justify-center w-32 h-32 sm:w-36 sm:h-36 p-3 rounded-full border-2 border-primary/30 bg-card/60 backdrop-blur-md shadow-md hover:shadow-primary/25 hover:border-primary transition-all duration-300 transform hover:scale-110 cursor-default"
-                          style={{ animationDelay: `${(catIndex * category.skills.length + skillIndex) * 80 + 200}ms` }}
-                        >
-                          <Zap className="h-7 w-7 sm:h-8 sm:h-8 text-primary mb-1.5 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
-                          <h4 className="font-headline text-xs text-center sm:text-sm text-foreground group-hover:text-primary transition-colors duration-300 leading-tight px-1">
-                            {skill.name}
-                          </h4>
-                          <div className="absolute inset-0 rounded-full border-2 border-primary/0 group-hover:border-primary/50 scale-90 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out pointer-events-none"></div>
-                        </div>
-                      </TooltipTrigger>
-                      <TooltipContent side="bottom" className="max-w-xs bg-popover text-popover-foreground p-3 rounded-md shadow-lg border-border text-sm">
-                        <p className="leading-relaxed">{skill.description}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+                  <div
+                    key={skill.name}
+                    className="scroll-reveal group bg-gradient-to-br from-card/70 via-card/60 to-secondary/30 backdrop-blur-lg p-6 rounded-2xl border border-border/30 hover:border-primary/60 shadow-xl hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-6"
+                    style={{ animationDelay: `${(catIndex * category.skills.length + skillIndex) * 80 + 200}ms` }}
+                  >
+                    {/* Icon & Title Column (or top part on mobile) */}
+                    <div className="flex-shrink-0 w-full md:w-40 flex flex-col items-center md:items-start">
+                      <div className="relative mb-3 p-3 bg-primary/10 rounded-full inline-block transform transition-all duration-300 group-hover:scale-110 ring-2 ring-primary/20 group-hover:ring-primary/50">
+                        <Zap className="h-10 w-10 text-primary transition-transform duration-300 group-hover:rotate-[-6deg]" />
+                        <div className="absolute inset-0 rounded-full border-2 border-primary/0 group-hover:border-primary/40 opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-105 transition-all duration-300 ease-out pointer-events-none"></div>
+                      </div>
+                      <h4 className="font-headline text-xl text-foreground group-hover:text-primary transition-colors duration-300 mb-2">
+                        {skill.name}
+                      </h4>
+                    </div>
+
+                    {/* Description Column (or bottom part on mobile) */}
+                    <div className="flex-grow">
+                      <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                        {skill.description}
+                      </p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
