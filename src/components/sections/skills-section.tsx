@@ -1,14 +1,13 @@
 
 "use client";
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Brain, Bot, Code, Settings, Zap } from 'lucide-react'; 
+import { Brain, Bot, Settings, Zap } from 'lucide-react'; 
 import { useScrollReveal } from '@/hooks/use-scroll-spy';
 
 const skillCategories = [
   {
     categoryName: 'AI/ML Core & Specializations',
-    icon: <Brain className="h-8 w-8 text-primary" />,
+    icon: <Brain className="h-12 w-12 text-primary" />,
     skills: [
       { name: 'Machine Learning', description: "Classical algorithms (SVM, Regression, Clustering, Decision Trees), ensemble methods (Random Forests, Gradient Boosting)." },
       { name: 'Deep Learning', description: "Architectures (CNNs, RNNs, LSTMs, Transformers), training techniques, optimization." },
@@ -18,7 +17,7 @@ const skillCategories = [
   },
   {
     categoryName: 'Generative AI & AI Agents',
-    icon: <Bot className="h-8 w-8 text-primary" />,
+    icon: <Bot className="h-12 w-12 text-primary" />,
     skills: [
       { name: 'Large Language Models (LLMs)', description: "Prompt engineering, fine-tuning, RAG, LLM Ops, model evaluation." },
       { name: 'Generative Models', description: "GANs, VAEs, Diffusion Models for image and data synthesis." },
@@ -27,7 +26,7 @@ const skillCategories = [
   },
   {
     categoryName: 'AI Development Tools & Platforms',
-    icon: <Settings className="h-8 w-8 text-primary" />,
+    icon: <Settings className="h-12 w-12 text-primary" />,
     skills: [
       { name: 'AI/ML Frameworks', description: "TensorFlow, Keras, Scikit-learn, Hugging Face Transformers." },
       { name: 'GenAI Development Tools', description: "LangChain, LlamaIndex, Genkit, Vertex AI, OpenAI API." },
@@ -58,27 +57,24 @@ export default function SkillsSection() {
                 <h3 className="font-headline text-3xl lg:text-4xl text-accent text-center md:text-left">{category.categoryName}</h3>
               </div>
               
-              <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-12">
+              <div className="mt-8 space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div
                     key={skill.name}
-                    className="scroll-reveal group bg-gradient-to-br from-card/70 via-card/60 to-secondary/30 backdrop-blur-lg p-6 rounded-2xl border border-border/30 hover:border-primary/60 shadow-xl hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-6"
-                    style={{ animationDelay: `${(catIndex * category.skills.length + skillIndex) * 80 + 200}ms` }}
+                    className="scroll-reveal group flex flex-col sm:flex-row items-start gap-x-6 gap-y-4 py-8 px-6 my-2 rounded-xl transition-all duration-300 ease-out hover:bg-primary/10 hover:shadow-2xl hover:shadow-primary/15 transform hover:-translate-y-1.5 border-b border-border/20 last:border-b-0"
+                    style={{ animationDelay: `${(catIndex * category.skills.length + skillIndex) * 100 + 300}ms` }}
                   >
-                    {/* Icon & Title Column (or top part on mobile) */}
-                    <div className="flex-shrink-0 w-full md:w-40 flex flex-col items-center md:items-start">
-                      <div className="relative mb-3 p-3 bg-primary/10 rounded-full inline-block transform transition-all duration-300 group-hover:scale-110 ring-2 ring-primary/20 group-hover:ring-primary/50">
-                        <Zap className="h-10 w-10 text-primary transition-transform duration-300 group-hover:rotate-[-6deg]" />
-                        <div className="absolute inset-0 rounded-full border-2 border-primary/0 group-hover:border-primary/40 opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-105 transition-all duration-300 ease-out pointer-events-none"></div>
-                      </div>
-                      <h4 className="font-headline text-xl text-foreground group-hover:text-primary transition-colors duration-300 mb-2">
-                        {skill.name}
-                      </h4>
+                    {/* Icon Element */}
+                    <div className="flex-shrink-0 p-4 bg-background group-hover:bg-primary/5 border border-border group-hover:border-primary/30 rounded-full transition-all duration-300 ease-out shadow-md group-hover:shadow-primary/20 self-center sm:self-start">
+                      <Zap className="h-8 w-8 text-primary group-hover:scale-125 group-hover:rotate-[-15deg] transition-all duration-300 ease-out" />
                     </div>
 
-                    {/* Description Column (or bottom part on mobile) */}
-                    <div className="flex-grow">
-                      <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                    {/* Text Content Element */}
+                    <div className="flex-1 text-center sm:text-left">
+                      <h4 className="font-headline text-2xl text-foreground group-hover:text-primary transition-colors duration-300 mb-2">
+                        {skill.name}
+                      </h4>
+                      <p className="text-muted-foreground text-base leading-relaxed">
                         {skill.description}
                       </p>
                     </div>
