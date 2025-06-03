@@ -25,14 +25,15 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-muted/50">
       <Image 
-        src="https://drive.google.com/uc?export=view&id=1jyq2xRuyBw9lBOaLDriNgfPUJBL-1g0W" 
-        alt="Futuristic AI background" 
+        src="https://drive.google.com/uc?export=view&id=101xyCrefSN3PIb8kkErWB2bZbeQpGCRG" 
+        alt="Animated AI data plexus background" 
         fill
         objectFit="cover" 
         className="absolute inset-0 -z-10 opacity-100 hero-bg-animated"
-        data-ai-hint="abstract circuits" 
+        data-ai-hint="animated plexus network" 
         priority
         sizes="100vw"
+        unoptimized={true}
       />
       {/* Subtle animated gradient or particle effect placeholder */}
       <div className="absolute inset-0 -z-20 animate-pulse bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/0.1)_0%,transparent_60%)]"></div>
