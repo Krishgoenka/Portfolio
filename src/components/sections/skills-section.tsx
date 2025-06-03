@@ -1,13 +1,13 @@
-
 "use client";
 import React from 'react';
-import { Brain, Bot, Settings, Zap } from 'lucide-react'; 
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Brain, Bot, Settings, Zap } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/use-scroll-spy';
 
 const skillCategories = [
   {
     categoryName: 'AI/ML Core & Specializations',
-    icon: <Brain className="h-12 w-12 text-primary" />,
+    icon: <Brain className="h-8 w-8 text-primary mr-3" />,
     skills: [
       { name: 'Machine Learning', description: "Classical algorithms (SVM, Regression, Clustering, Decision Trees), ensemble methods (Random Forests, Gradient Boosting)." },
       { name: 'Deep Learning', description: "Architectures (CNNs, RNNs, LSTMs, Transformers), training techniques, optimization." },
@@ -17,7 +17,7 @@ const skillCategories = [
   },
   {
     categoryName: 'Generative AI & AI Agents',
-    icon: <Bot className="h-12 w-12 text-primary" />,
+    icon: <Bot className="h-8 w-8 text-primary mr-3" />,
     skills: [
       { name: 'Large Language Models (LLMs)', description: "Prompt engineering, fine-tuning, RAG, LLM Ops, model evaluation." },
       { name: 'Generative Models', description: "GANs, VAEs, Diffusion Models for image and data synthesis." },
@@ -26,7 +26,7 @@ const skillCategories = [
   },
   {
     categoryName: 'AI Development Tools & Platforms',
-    icon: <Settings className="h-12 w-12 text-primary" />,
+    icon: <Settings className="h-8 w-8 text-primary mr-3" />,
     skills: [
       { name: 'AI/ML Frameworks', description: "TensorFlow, Keras, Scikit-learn, Hugging Face Transformers." },
       { name: 'GenAI Development Tools', description: "LangChain, LlamaIndex, Genkit, Vertex AI, OpenAI API." },
@@ -34,9 +34,10 @@ const skillCategories = [
   }
 ];
 
+
 export default function SkillsSection() {
   useScrollReveal();
-  
+
   return (
     <section id="skills" className="bg-secondary/30">
       <div className="container">
@@ -45,40 +46,35 @@ export default function SkillsSection() {
           <p className="text-xl text-muted-foreground mt-2">The technologies and skills I leverage to build intelligent solutions.</p>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-12">
           {skillCategories.map((category, catIndex) => (
-            <div 
-              key={category.categoryName} 
-              className="scroll-reveal" 
-              style={{ animationDelay: `${catIndex * 150}ms` }}
+            <div
+              key={category.categoryName}
+              className="scroll-reveal"
+              style={{ animationDelay: `${catIndex * 200}ms` }}
             >
-              <div className="flex items-center justify-center md:justify-start mb-10">
-                {React.cloneElement(category.icon, { className: "h-12 w-12 text-primary mr-4 bounce-in-icon" })}
-                <h3 className="font-headline text-3xl lg:text-4xl text-accent text-center md:text-left">{category.categoryName}</h3>
+              <div className="flex items-center mb-6">
+                {React.cloneElement(category.icon, { className: "h-8 w-8 text-primary mr-3" })}
+                <h3 className="font-headline text-2xl text-accent">{category.categoryName}</h3>
               </div>
-              
-              <div className="mt-8 space-y-4">
+
+              <div className="grid md:grid-cols-2 gap-6">
                 {category.skills.map((skill, skillIndex) => (
-                  <div
+                  <Card
                     key={skill.name}
-                    className="scroll-reveal group flex flex-col sm:flex-row items-start gap-x-6 gap-y-4 py-8 px-6 my-2 rounded-xl transition-all duration-300 ease-out hover:bg-primary/10 hover:shadow-2xl hover:shadow-primary/15 transform hover:-translate-y-1.5 border-b border-border/20 last:border-b-0"
+                    className="scroll-reveal shadow-lg hover:shadow-primary/20 transition-all duration-300 transform hover:-translate-y-1 bg-card/60 backdrop-blur-md border border-border/30 hover:border-primary/50 h-full flex flex-col"
                     style={{ animationDelay: `${(catIndex * category.skills.length + skillIndex) * 100 + 300}ms` }}
                   >
-                    {/* Icon Element */}
-                    <div className="flex-shrink-0 p-4 bg-background group-hover:bg-primary/5 border border-border group-hover:border-primary/30 rounded-full transition-all duration-300 ease-out shadow-md group-hover:shadow-primary/20 self-center sm:self-start">
-                      <Zap className="h-8 w-8 text-primary group-hover:scale-125 group-hover:rotate-[-15deg] transition-all duration-300 ease-out" />
-                    </div>
-
-                    {/* Text Content Element */}
-                    <div className="flex-1 text-center sm:text-left">
-                      <h4 className="font-headline text-2xl text-foreground group-hover:text-primary transition-colors duration-300 mb-2">
-                        {skill.name}
-                      </h4>
-                      <p className="text-muted-foreground text-base leading-relaxed">
-                        {skill.description}
-                      </p>
-                    </div>
-                  </div>
+                    <CardHeader>
+                      <div className="flex items-center mb-2">
+                        <Zap className="h-6 w-6 text-primary mr-2" />
+                        <CardTitle className="font-headline text-xl">{skill.name}</CardTitle>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <p className="text-sm text-muted-foreground">{skill.description}</p>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </div>
