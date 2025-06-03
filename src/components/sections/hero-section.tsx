@@ -25,13 +25,13 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-muted/50">
       <Image 
-        src="/hero-background.gif" // Assumes hero-background.gif is in /public
+        src="/hero.gif" 
         alt="Animated AI data plexus background" 
         fill
         style={{ objectFit: "cover" }}
         className="absolute inset-0 -z-10 opacity-100 hero-bg-animated"
         priority
-        unoptimized={true} // Important for GIFs
+        unoptimized={true} 
         data-ai-hint="animated plexus network"
       />
       {/* Subtle animated gradient or particle effect placeholder */}
@@ -64,3 +64,4 @@ export default function HeroSection() {
     </section>
   );
 }
+
