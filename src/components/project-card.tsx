@@ -46,11 +46,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      const rotateXRange = 6; 
+      const rotateXRange = 6;
       const rotateYRange = 9;
 
       const rotateX = ((y - centerY) / centerY) * rotateXRange;
-      const rotateY = ((centerX - x) / centerX) * rotateYRange; 
+      const rotateY = ((centerX - x) / centerX) * rotateYRange;
 
       setTransformStyle({
         transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.04)`,
@@ -86,9 +86,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         className={cn(
           "overflow-hidden h-full flex flex-col certificate-shine animate-slide-in-left bg-card/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow duration-300 group"
         )}
-        style={{ 
-          ...transformStyle, 
-          animationDelay: `${index * 150}ms` 
+        style={{
+          ...transformStyle,
+          animationDelay: `${index * 150}ms`
         }}
         onMouseEnter={() => project.gifUrl && setShowGif(true)}
         onMouseLeave={() => project.gifUrl && setShowGif(false)}
@@ -99,9 +99,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             alt={project.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover"
+            className="object-cover absolute inset-0 z-0"
             data-ai-hint={project.imageHint || "project technology"}
             priority={index < 2} // Prioritize loading for first few cards
+            key={project.imageUrl}
           />
           {project.gifUrl && (
             <Image
@@ -115,6 +116,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               )}
               data-ai-hint={project.gifHint || "project animation"}
               unoptimized={true} // GIFs are often better unoptimized
+              key={project.gifUrl}
             />
           )}
         </div>
@@ -152,17 +154,16 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </DialogHeader>
         <div className="grid gap-6 py-4 text-sm max-h-[70vh] overflow-y-auto pr-3">
           {project.longDescription && <p>{project.longDescription}</p>}
-          
-          {project.gifUrl && (
+
+          {project.imageUrl && (
             <div className="relative w-full h-64 my-4 rounded-md overflow-hidden border border-border">
-               <Image 
-                  src={project.gifUrl} 
-                  alt={`${project.title} animation`} 
-                  fill 
-                  objectFit="contain"
-                  data-ai-hint={project.gifHint || "project demo"}
+               <Image
+                  src={project.imageUrl}
+                  alt={project.title}
+                  fill
+                  style={{ objectFit: "contain" }}
+                  data-ai-hint={project.imageHint || "project details"}
                   sizes="(max-width: 625px) 100vw, 570px"
-                  unoptimized={true}
                 />
             </div>
           )}
