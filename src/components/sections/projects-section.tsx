@@ -17,12 +17,16 @@ Key Features:
 • Personalized Feedback: The platform analyzes resumes against job descriptions, identifies weaknesses, and suggests enhancements.
 • ATS Optimization: Helps optimize resumes for Applicant Tracking Systems (ATS) by identifying and incorporating relevant keywords.
 
-This tool empowers users to refine their resumes effectively and helps HR professionals streamline their recruitment process.`,
+How to Use:
+1. Role Selection: Choose your role as either an Applicant or HR professional upon accessing the application.
+2. Resume Upload (Applicant): Upload your resume in PDF format to receive personalized feedback and insights into areas of improvement. Additionally, upload job descriptions of target companies to identify missing points and enhance your resume accordingly.
+3. Job Description Upload (HR and Applicant): Upload job descriptions to receive a summary of resumes and a percentage match, identifying crucial points required for the position.
+4. Implement Suggestions: Incorporate the feedback provided by "Resume Advisor" to enhance your resume or streamline your recruitment process.`,
     imageUrl: 'https://drive.google.com/uc?export=view&id=1SVN_oDaA2uUBGTha4VonAvIxpjPdxMDQ',
     imageHint: 'resume ATS',
     gifUrl: 'https://placehold.co/600x400.png',
     gifHint: 'scoring animation',
-    techStack: ['Python', 'Flask', 'NLTK', 'spaCy', 'Scikit-learn', 'React', 'MongoDB', 'Streamlit'],
+    techStack: ['Python', 'NLTK', 'Streamlit', 'Gemini API'],
     challenges: 'Handling diverse resume formats, accurately extracting skills and experience, and ensuring fairness in the matching algorithm.',
     outcome: 'Successfully created a functional ATS prototype capable of processing resumes and providing actionable feedback. Improved candidate shortlisting efficiency.',
     liveLink: 'https://gdschackathon-u2mbyvry37oho6bgf4gx68.streamlit.app/',
@@ -31,7 +35,7 @@ This tool empowers users to refine their resumes effectively and helps HR profes
   {
     id: 'isro-hackathon',
     title: 'Shashipath (ISRO Hackathon – Lunar Rover Navigation)',
-    shortDescription: 'Crater detection and optimal pathfinding using image processing.',
+    shortDescription: 'Crater detection and optimal pathfinding using image processing (Ongoing).',
     longDescription: 'Participated in the ISRO National Hackathon, focusing on developing an algorithm for lunar rover navigation. The project involved image processing techniques for crater detection from satellite imagery and A* search algorithm for finding the safest and most optimal path for the rover.',
     imageUrl: 'https://drive.google.com/uc?export=view&id=1v01yl9YWRs6eQomgBZagwBVhGWZ8yPJW',
     imageHint: 'lunar navigation',
