@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image'; // Temporarily commented out
 import { ArrowDown } from 'lucide-react';
 
 export default function HeroSection() {
@@ -24,14 +24,14 @@ export default function HeroSection() {
   
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-muted/50">
-      <Image 
-        src="/hero.gif" 
-        alt="Animated AI data plexus background" 
-        fill
-        className="absolute inset-0 -z-10 opacity-100"
-        unoptimized={true} 
+      {/* Standard HTML img tag for troubleshooting */}
+      <img
+        src="/hero.gif"
+        alt="Animated AI data plexus background"
+        className="absolute inset-0 w-full h-full object-cover -z-10 opacity-100"
         data-ai-hint="animated plexus network"
       />
+      
       {/* Subtle animated gradient or particle effect placeholder */}
       <div className="absolute inset-0 -z-20 animate-pulse bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/0.1)_0%,transparent_60%)]"></div>
 
@@ -62,4 +62,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
