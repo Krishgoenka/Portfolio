@@ -28,8 +28,7 @@ export default function HeroSection() {
         src="/hero.gif" 
         alt="Animated AI data plexus background" 
         fill
-        style={{ objectFit: "cover" }}
-        className="absolute inset-0 -z-10 opacity-100 hero-bg-animated"
+        className="absolute inset-0 -z-10 opacity-100"
         unoptimized={true} 
         data-ai-hint="animated plexus network"
       />
@@ -63,3 +62,4 @@ export default function HeroSection() {
     </section>
   );
 }
+
