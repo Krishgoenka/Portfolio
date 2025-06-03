@@ -10,8 +10,9 @@ const milestones = [
   { year: "2022", event: "Commenced Bachelor of Technology in CSE (AI Specialization) at Techno India University." },
   { year: "2023", event: "Applied AI to space technology challenges in the ISRO National Hackathon." },
   { year: "2023", event: "Led development & deployment of 'Resume Advisor ATS,' an AI-driven career tool." },
-  { year: "2024", event: "Selected as IIT Delhi E-Summit Campus Ambassador, promoting innovation." },
-  { year: "2024", event: "Achieved Finalist in AI Unite Hackathon for an innovative AI healthcare solution." },
+  { year: "2024", event: "Selected as IIT Delhi E-Summit Campus Ambassador, promoting innovation and entrepreneurial spirit." },
+  { year: "2024", event: "Achieved Finalist in AI Unite Hackathon for developing an innovative AI healthcare solution." },
+  { year: "2024", event: "Secured a top ranking in a competitive Machine Learning challenge hosted by ML Kolkata." },
 ];
 
 export default function AboutSection() {
@@ -62,7 +63,7 @@ export default function AboutSection() {
             </CardHeader>
             <CardContent className="space-y-6">
                 <p className="text-lg leading-relaxed text-foreground/90">
-                  I am Krish Goenka, a Computer Science Engineering student specializing in Artificial Intelligence. My passion lies in transforming complex AI concepts into tangible, real-world applications. I thrive on challenges, from developing innovative AI-driven systems to competing in national hackathons like ISRO & AI Unite, where I blend creative problem-solving with precise execution.
+                  I am Krish Goenka, a Computer Science Engineering student specializing in Artificial Intelligence at Techno India University. My passion lies in transforming complex AI concepts into tangible, real-world applications, with a keen interest in leveraging AI for startups and driving innovation. I thrive on challenges, from developing innovative AI-driven systems to competing in national hackathons like ISRO & AI Unite, where I blend creative problem-solving with precise execution.
                 </p>
                 <p className="text-xl italic text-primary font-medium">
                   "The best way to predict the future is to invent it." <br/> – This philosophy fuels my AI exploration.
