@@ -63,10 +63,7 @@ export default function AboutSection() {
             </CardHeader>
             <CardContent className="space-y-6">
                 <p className="text-lg leading-relaxed text-foreground/90">
-                  I am Krish Goenka, a Computer Science Engineering student specializing in Artificial Intelligence at Techno India University. My passion lies in transforming complex AI concepts into tangible, real-world applications, with a keen interest in leveraging AI for startups and driving innovation. I thrive on challenges, from developing innovative AI-driven systems to competing in national hackathons like ISRO & AI Unite, where I blend creative problem-solving with precise execution.
-                </p>
-                <p className="text-xl italic text-primary font-medium">
-                  "The best way to predict the future is to invent it." <br/> – This philosophy fuels my AI exploration.
+                  I am Krish Goenka, a Computer Science Engineering student at Techno India University specializing in Artificial Intelligence. My passion lies in transforming complex AI concepts into tangible, real-world applications. I am keenly interested in leveraging AI for startups, driving innovation, and tackling challenging problems by blending creative solutions with precise execution.
                 </p>
             </CardContent>
            </Card>

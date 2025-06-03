@@ -26,8 +26,8 @@
     --secondary: 210 15% 20%;
     --secondary-foreground: 210 10% 85%;
 
-    --accent: 170 80% 45%; /* Vibrant Teal/Sea Green - Accent Color */
-    --accent-foreground: 210 20% 5%; /* Dark for accent buttons */
+    --accent: 291 64% 39%; /* Purple - Accent Color (#9C27B0) */
+    --accent-foreground: 210 15% 95%; /* Light foreground for purple accent elements */
 
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
@@ -37,7 +37,7 @@
     --radius: 0.5rem;
 
     --chart-1: 200 90% 55%;
-    --chart-2: 170 80% 45%;
+    --chart-2: 170 80% 45%; /* This was the old accent, can be repurposed or removed if not used by charts */
     --chart-3: 220 70% 65%;
     --chart-4: 45 100% 50%;
     --chart-5: 280 70% 60%;
