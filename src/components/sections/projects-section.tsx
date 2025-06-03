@@ -24,8 +24,8 @@ const projectsData: Project[] = [
     title: 'Shashipath (ISRO Hackathon – Lunar Rover Navigation)',
     shortDescription: 'Crater detection and optimal pathfinding using image processing.',
     longDescription: 'Participated in the ISRO National Hackathon, focusing on developing an algorithm for lunar rover navigation. The project involved image processing techniques for crater detection from satellite imagery and A* search algorithm for finding the safest and most optimal path for the rover.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'moon rover',
+    imageUrl: 'https://storage.googleapis.com/apphosting-cms-assets/images/prototyper/YqF7Kk0TTRqfKz-C3XhVpQ/3450180f-4bb3-434c-b352-e33a5c4f4dca.png',
+    imageHint: 'lunar navigation',
     gifUrl: 'https://placehold.co/600x400.png',
     gifHint: 'pathfinding map',
     techStack: ['Python', 'OpenCV', 'NumPy', 'Matplotlib', 'A* Algorithm'],
@@ -34,7 +34,7 @@ const projectsData: Project[] = [
     repoLink: 'https://github.com/Krishgoenka/Shashipath',
   },
   {
-    id: 'ai-unite-hackathon', // ID remains the same for mapping, content changes
+    id: 'ai-unite-hackathon', 
     title: 'Brain Tumour Detection using MRI',
     shortDescription: 'AI model to detect and classify brain tumors from MRI scans.',
     longDescription: 'Developed a deep learning model (CNN-based) to analyze MRI images for the presence of brain tumors. The system aims to assist medical professionals by highlighting potential tumorous regions and classifying tumor types, improving diagnostic accuracy and speed.',
