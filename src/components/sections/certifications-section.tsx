@@ -21,10 +21,10 @@ const certificationsData: Certification[] = [
     id: 'microsoft-ai-challenge',
     title: 'Microsoft AI Skills Challenge Completion',
     issuer: 'Microsoft Learn',
-    date: 'Apr 2024', // Placeholder, please update if different
+    date: 'Apr 2024',
     imageUrl: 'https://drive.google.com/uc?export=view&id=1xUlyw2zj0nfZWCIcObZGF53l_-1yfDZH',
     imageHint: 'Microsoft AI challenge',
-    verifyLink: '#', // Placeholder, please update
+    verifyLink: '#', 
   },
   {
     id: 'isro-hackathon-cert',
@@ -51,7 +51,7 @@ const certificationsData: Certification[] = [
     date: 'Mar 2024',
     imageUrl: 'https://drive.google.com/uc?export=view&id=1JWwNfqisjTh3Eb7KFyeNVbUQIW4oHa2N',
     imageHint: 'AI hackathon finalist certificate',
-    verifyLink: '#', // Placeholder if no specific link
+    verifyLink: '#', 
   },
   {
     id: 'kaggle-intermediate-ml',
@@ -61,6 +61,15 @@ const certificationsData: Certification[] = [
     imageUrl: 'https://drive.google.com/uc?export=view&id=12tLt5RI_P-DR21bdgK066kXQdF9Jqhiw',
     imageHint: 'Kaggle ML certificate',
     verifyLink: 'https://www.kaggle.com/learn/certification/krishgoenka/intermediate-machine-learning',
+  },
+  {
+    id: 'infosys-ai-intro',
+    title: 'Introduction to AI',
+    issuer: 'Infosys Springboard',
+    date: 'Date N/A', // Placeholder date
+    imageUrl: 'https://drive.google.com/uc?export=view&id=11MJI2HNxcdQdMhjYjfE04L70FDk9hqss',
+    imageHint: 'Infosys AI certificate',
+    verifyLink: '#', // Placeholder link
   },
 ];
 
@@ -91,7 +100,7 @@ export default function CertificationsSection() {
                   className="w-full h-auto object-cover"
                   data-ai-hint={cert.imageHint}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={index < 2} // Prioritize loading for first few cards
+                  priority={index < 2} 
                 />
               </div>
               <CardContent className="p-4 bg-card/80 backdrop-blur-sm flex-grow flex flex-col justify-between">
@@ -117,3 +126,4 @@ export default function CertificationsSection() {
     </section>
   );
 }
+
