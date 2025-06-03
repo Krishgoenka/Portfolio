@@ -24,7 +24,7 @@ const projectsData: Project[] = [
     title: 'Shashipath (ISRO Hackathon – Lunar Rover Navigation)',
     shortDescription: 'Crater detection and optimal pathfinding using image processing.',
     longDescription: 'Participated in the ISRO National Hackathon, focusing on developing an algorithm for lunar rover navigation. The project involved image processing techniques for crater detection from satellite imagery and A* search algorithm for finding the safest and most optimal path for the rover.',
-    imageUrl: 'https://storage.googleapis.com/apphosting-cms-assets/images/prototyper/YqF7Kk0TTRqfKz-C3XhVpQ/3450180f-4bb3-434c-b352-e33a5c4f4dca.png',
+    imageUrl: 'https://drive.google.com/uc?export=view&id=1v01yl9YWRs6eQomgBZagwBVhGWZ8yPJW',
     imageHint: 'lunar navigation',
     gifUrl: 'https://placehold.co/600x400.png',
     gifHint: 'pathfinding map',
