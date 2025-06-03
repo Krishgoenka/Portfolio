@@ -32,8 +32,7 @@ export default function HeroSection() {
         className="absolute inset-0 -z-10 opacity-100 hero-bg-animated"
         data-ai-hint="animated plexus network" 
         priority
-        sizes="100vw"
-        unoptimized={true}
+        unoptimized={true} // Important for GIFs
       />
       {/* Subtle animated gradient or particle effect placeholder */}
       <div className="absolute inset-0 -z-20 animate-pulse bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/0.1)_0%,transparent_60%)]"></div>
