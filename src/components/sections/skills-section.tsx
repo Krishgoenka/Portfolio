@@ -2,7 +2,7 @@
 "use client";
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Brain, Bot, Code, Settings } from 'lucide-react'; // Code icon might be unused now
+import { Brain, Bot, Code, Settings, Zap } from 'lucide-react'; 
 import { useScrollReveal } from '@/hooks/use-scroll-spy';
 
 const skillCategories = [
@@ -46,24 +46,33 @@ export default function SkillsSection() {
           <p className="text-xl text-muted-foreground mt-2">The technologies and skills I leverage to build intelligent solutions.</p>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-16"> {/* Increased space between categories */}
           {skillCategories.map((category, catIndex) => (
-            <div key={category.categoryName} className="scroll-reveal" style={{animationDelay: `${catIndex * 150}ms`}}>
-              <div className="flex items-center mb-6">
-                {React.cloneElement(category.icon, { className: "h-10 w-10 text-primary mr-4 bounce-in-icon" })}
-                <h3 className="font-headline text-3xl text-accent">{category.categoryName}</h3>
+            <div 
+              key={category.categoryName} 
+              className="scroll-reveal" 
+              style={{ animationDelay: `${catIndex * 150}ms` }}
+            >
+              <div className="flex items-center mb-8">
+                {React.cloneElement(category.icon, { className: "h-12 w-12 text-primary mr-4 bounce-in-icon" })}
+                <h3 className="font-headline text-3xl lg:text-4xl text-accent">{category.categoryName}</h3>
               </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-x-8 gap-y-8">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name} className="scroll-reveal" style={{animationDelay: `${(catIndex * category.skills.length + skillIndex) * 50}ms`}}>
-                    <Card className="h-full hover:shadow-xl transition-shadow duration-300 bg-card/70 backdrop-blur-sm">
-                      <CardHeader className="pb-3">
-                        <CardTitle className="font-headline text-xl text-foreground">{skill.name}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-muted-foreground">{skill.description}</p>
-                      </CardContent>
-                    </Card>
+                  <div
+                    key={skill.name}
+                    className="scroll-reveal group bg-card/60 backdrop-blur-md p-6 rounded-xl shadow-lg hover:shadow-primary/20 transition-all duration-300 transform hover:-translate-y-1.5 border border-border/30 hover:border-primary/50"
+                    style={{ animationDelay: `${(catIndex * 2 + skillIndex) * 100 + 150}ms` }} 
+                  >
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 mt-0.5 p-2.5 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors duration-300">
+                        <Zap className="h-6 w-6 text-primary transform transition-transform duration-300 group-hover:scale-110" />
+                      </div>
+                      <div>
+                        <h4 className="font-headline text-xl text-foreground group-hover:text-primary transition-colors duration-300 mb-1.5">{skill.name}</h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{skill.description}</p>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
