@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Sparkles } from 'lucide-react';
+import { CheckCircle, Sparkles, UserCircle } from 'lucide-react'; // Added UserCircle
 import { useScrollReveal } from '@/hooks/use-scroll-spy';
 
 const milestones = [
@@ -21,51 +21,60 @@ export default function AboutSection() {
     <section id="about" className="container">
       <div className="text-center mb-16 scroll-reveal">
         <h2 className="font-headline text-5xl font-bold text-primary flex items-center justify-center">
-          <Sparkles className="mr-3 h-10 w-10" />
+          <UserCircle className="mr-3 h-12 w-12" /> {/* Changed icon and size */}
           About Me
         </h2>
         <p className="text-xl text-muted-foreground mt-4">My evolution in the AI landscape.</p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        <div className="scroll-reveal flex flex-col items-center md:items-start justify-center">
-          <div
-            className="relative group w-full max-w-sm sm:max-w-md aspect-[4/5] rounded-lg overflow-hidden
-                       shadow-2xl hover:shadow-primary/50 transition-all duration-500 ease-in-out
-                       transform hover:scale-105 float-animation"
-          >
-            <div className="absolute inset-0 -z-10 opacity-30"
-                 style={{ backgroundImage: 'repeating-linear-gradient(-45deg, hsl(var(--primary)/0.15), hsl(var(--primary)/0.15) 1px, transparent 1px, transparent 15px)' }}>
+      <div className="grid md:grid-cols-2 gap-8 items-start"> {/* Changed gap and items-start */}
+        <Card className="scroll-reveal shadow-xl bg-card/80 backdrop-blur-md border border-border/50 overflow-hidden">
+          <CardContent className="p-0"> {/* Remove CardContent padding if image fills */}
+            <div
+              className="relative group w-full aspect-[4/5] 
+                         float-animation" 
+            >
+              <div className="absolute inset-0 -z-10 opacity-30"
+                   style={{ backgroundImage: 'repeating-linear-gradient(-45deg, hsl(var(--primary)/0.05), hsl(var(--primary)/0.05) 1px, transparent 1px, transparent 15px)' }}>
+              </div>
+              <Image
+                src="https://drive.google.com/uc?export=view&id=1Zv-HOET7uIhj8lsnnbaJoXt8xTdNs-Ce"
+                alt="Krish Goenka - Profile Picture"
+                fill
+                objectFit="cover"
+                data-ai-hint="Krish Goenka profile"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
+                className="transition-transform duration-500 ease-in-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 border-2 border-primary/30 group-hover:border-primary/70 transition-all duration-500 pointer-events-none"></div>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                   style={{boxShadow: '0 0 25px 8px hsl(var(--primary)/0.5), 0 0 50px 15px hsl(var(--primary)/0.25)'}}>
+              </div>
             </div>
-            <Image
-              src="https://drive.google.com/uc?export=view&id=1Zv-HOET7uIhj8lsnnbaJoXt8xTdNs-Ce"
-              alt="Krish Goenka - Profile Picture"
-              fill
-              objectFit="cover"
-              data-ai-hint="Krish Goenka profile"
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
-              className="rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-110"
-              priority
-            />
-            <div className="absolute inset-0 rounded-lg border-2 border-primary/30 group-hover:border-primary/70 transition-all duration-500 pointer-events-none"></div>
-            <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                 style={{boxShadow: '0 0 35px 10px hsl(var(--primary)/0.6), 0 0 60px 20px hsl(var(--primary)/0.3)'}}>
-            </div>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
 
-        <div className="scroll-reveal space-y-8">
-           <div>
-              <p className="text-lg leading-relaxed mb-4 text-foreground/90">
-                My passion lies in transforming complex AI concepts into tangible, real-world applications. I thrive on challenges, from developing innovative AI-driven systems to competing in national hackathons like ISRO & AI Unite, where I blend creative problem-solving with precise execution.
-              </p>
-              <p className="text-xl italic text-primary font-medium">
-                "The best way to predict the future is to invent it." <br/> – This philosophy fuels my AI exploration.
-              </p>
-            </div>
+        <div className="space-y-8 scroll-reveal">
+           <Card className="shadow-xl bg-card/80 backdrop-blur-md border border-border/50">
+            <CardHeader>
+                <CardTitle className="font-headline text-3xl text-foreground">My Journey</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+                <p className="text-lg leading-relaxed text-foreground/90">
+                  My passion lies in transforming complex AI concepts into tangible, real-world applications. I thrive on challenges, from developing innovative AI-driven systems to competing in national hackathons like ISRO & AI Unite, where I blend creative problem-solving with precise execution.
+                </p>
+                <p className="text-xl italic text-primary font-medium">
+                  "The best way to predict the future is to invent it." <br/> – This philosophy fuels my AI exploration.
+                </p>
+            </CardContent>
+           </Card>
+
           <Card className="shadow-xl bg-card/80 backdrop-blur-md border border-border/50">
             <CardHeader>
-              <CardTitle className="font-headline text-3xl text-accent">Key Milestones</CardTitle>
+              <CardTitle className="font-headline text-3xl text-accent flex items-center">
+                <Sparkles className="mr-2 h-7 w-7" /> Key Milestones
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-4">
@@ -86,3 +95,4 @@ export default function AboutSection() {
     </section>
   );
 }
+
