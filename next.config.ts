@@ -19,13 +19,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'storage.googleapis.com', // For general Google Cloud Storage
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'drive.google.com',
+        hostname: 'drive.google.com', // Used in about and certifications sections
         port: '',
         pathname: '/**',
       }
