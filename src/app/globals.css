@@ -43,6 +43,43 @@
     --chart-5: 280 70% 60%;
   }
 
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 210 20% 9%;
+
+    --muted: 210 15% 92%;
+    --muted-foreground: 210 10% 45%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 9%;
+
+    --border: 210 10% 88%;
+    --input: 210 10% 92%;
+
+    --primary: 200 90% 55%; /* Vivid Sky Blue - Main Color */
+    --primary-foreground: 210 15% 98%; /* Lighter for primary buttons */
+
+    --secondary: 210 15% 90%;
+    --secondary-foreground: 210 15% 20%;
+
+    --accent: 190 80% 70%; /* Light Blue - Accent Color */
+    --accent-foreground: 200 10% 15%; /* Darker foreground for light blue accent elements */
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --ring: 200 90% 60%; /* Ring can often be the same as primary or a slightly brighter primary */
+
+    /* Chart colors can remain the same or be adjusted for light theme if needed */
+    --chart-1: 200 90% 55%;
+    --chart-2: 170 80% 45%;
+    --chart-3: 220 70% 65%;
+    --chart-4: 45 100% 50%;
+    --chart-5: 280 70% 60%;
+  }
 }
 
 @layer base {
@@ -213,3 +250,4 @@
   animation: slow-zoom-in-out 40s ease-in-out infinite alternate;
   will-change: transform; /* Optimize animation performance */
 }
+
