@@ -7,10 +7,6 @@ import { CheckCircle, Sparkles, UserCircle } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/use-scroll-spy';
 
 const milestones = [
-  { year: "2022", event: "Commenced Bachelor of Technology in CSE (AI Specialization) at Techno India University." },
-  { year: "2023", event: "Applied AI to space technology challenges in the ISRO National Hackathon." },
-  { year: "2023", event: "Led development & deployment of 'Resume Advisor ATS,' an AI-driven career tool." },
-  { year: "2024", event: "Selected as IIT Delhi E-Summit Campus Ambassador, promoting innovation and entrepreneurial spirit." },
   { year: "2024", event: "Achieved Finalist in AI Unite Hackathon for developing an innovative AI healthcare solution." },
   { year: "2024", event: "Secured a top ranking in a competitive Machine Learning challenge hosted by ML Kolkata." },
 ];
@@ -70,15 +66,15 @@ export default function AboutSection() {
 
           <Card className="shadow-xl bg-card/80 backdrop-blur-md border border-border/50">
             <CardHeader>
-              <CardTitle className="font-headline text-3xl text-accent flex items-center">
-                <Sparkles className="mr-2 h-7 w-7" /> Key Milestones
+              <CardTitle className="font-headline text-3xl text-foreground flex items-center">
+                <Sparkles className="mr-2 h-7 w-7 text-foreground" /> Key Milestones
               </CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-4">
                 {milestones.map((milestone, index) => (
                   <li key={index} className="flex items-start space-x-3 p-3 rounded-md hover:bg-muted/50 transition-colors duration-200">
-                    <CheckCircle className="h-7 w-7 text-primary mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-7 w-7 text-foreground mt-1 flex-shrink-0" />
                     <div>
                       <span className="font-semibold text-lg text-foreground">{milestone.event}</span>
                       <p className="text-sm text-muted-foreground">{milestone.year}</p>
