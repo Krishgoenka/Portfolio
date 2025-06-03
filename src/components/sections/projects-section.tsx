@@ -8,12 +8,21 @@ const projectsData: Project[] = [
     id: 'resume-advisor',
     title: 'Resume Advisor (ATS System)',
     shortDescription: 'AI-powered system for skill-gap identification and candidate-job matching.',
-    longDescription: 'Developed an AI-driven Applicant Tracking System (ATS) that analyzes resumes against job descriptions. It identifies skill gaps, scores resumes based on relevance, and helps candidates optimize their applications for better job matching. The system uses NLP techniques for parsing and understanding resume content.',
+    longDescription: `Resume Advisor is a cutting-edge platform developed to address the frustrations faced by job seekers due to the lack of feedback on their resumes. This innovative tool provides personalized insights into resume weaknesses, suggests skill improvements, and identifies crucial keywords for optimization, significantly enhancing job seekers' chances of success in the competitive job market.
+
+Key Features:
+• Role Selection: Users select their role as either an Applicant or HR professional.
+• Resume & JD Analysis (Applicant): Applicants upload resumes (PDF) and target job descriptions to receive personalized feedback, identify missing points, and get suggestions for improvement.
+• Job Description Analysis (HR & Applicant): HR professionals and applicants can upload job descriptions to receive a summary of resumes and a percentage match, identifying crucial points for the position.
+• Personalized Feedback: The platform analyzes resumes against job descriptions, identifies weaknesses, and suggests enhancements.
+• ATS Optimization: Helps optimize resumes for Applicant Tracking Systems (ATS) by identifying and incorporating relevant keywords.
+
+This tool empowers users to refine their resumes effectively and helps HR professionals streamline their recruitment process.`,
     imageUrl: 'https://drive.google.com/uc?export=view&id=1SVN_oDaA2uUBGTha4VonAvIxpjPdxMDQ',
     imageHint: 'resume ATS',
     gifUrl: 'https://placehold.co/600x400.png',
     gifHint: 'scoring animation',
-    techStack: ['Python', 'Flask', 'NLTK', 'spaCy', 'Scikit-learn', 'React', 'MongoDB'],
+    techStack: ['Python', 'Flask', 'NLTK', 'spaCy', 'Scikit-learn', 'React', 'MongoDB', 'Streamlit'],
     challenges: 'Handling diverse resume formats, accurately extracting skills and experience, and ensuring fairness in the matching algorithm.',
     outcome: 'Successfully created a functional ATS prototype capable of processing resumes and providing actionable feedback. Improved candidate shortlisting efficiency.',
     liveLink: 'https://gdschackathon-u2mbyvry37oho6bgf4gx68.streamlit.app/',
@@ -37,14 +46,14 @@ const projectsData: Project[] = [
     id: 'ai-unite-hackathon',
     title: 'Brain Tumour Detection using MRI',
     shortDescription: 'AI model to detect and classify brain tumors from MRI scans.',
-    longDescription: 'Developed during the AI Unite Hackathon by team nvAI, this project utilizes Machine Learning, Computer Vision, and Segmentation techniques with a CNN-based model to detect brain tumors from MRI images. The model, which achieved an 89% accuracy on its test dataset, aims to assist medical professionals by highlighting potential tumorous regions and classifying tumor types, thereby improving diagnostic accuracy and speed.',
+    longDescription: "Developed during the AI Unite Hackathon by team nvAI, this project utilizes Machine Learning, Computer Vision, and Segmentation techniques with a CNN-based model to detect brain tumors from MRI images. The model, which achieved an 89% accuracy on its test dataset, aims to assist medical professionals by highlighting potential tumorous regions and classifying tumor types, thereby improving diagnostic accuracy and speed. The server component is powered by Flask, hosted on a Linode instance, accepting MRI images and returning detailed JSON responses.",
     imageUrl: 'https://drive.google.com/uc?export=view&id=1irxxdl3Ji2fYOiW7PfXXG8BGFluf-sXW',
     imageHint: 'brain MRI',
     gifUrl: 'https://placehold.co/600x400.png',
     gifHint: 'detection animation',
     techStack: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'DICOM', 'Flask', 'Scikit-learn', 'React'],
     challenges: 'Achieving high accuracy with imbalanced datasets, handling variations in MRI scan quality, and ensuring model interpretability for medical use.',
-    outcome: 'The model achieved an 89% accuracy on test data, demonstrating potential for clinical application. As part of team nvAI, this project was recognized as a Finalist in the AI Unite Hackathon. The server component is powered by Flask, hosted on a Linode instance, accepting MRI images and returning detailed JSON responses.',
+    outcome: 'The model achieved an 89% accuracy on test data, demonstrating potential for clinical application. As part of team nvAI, this project was recognized as a Finalist in the AI Unite Hackathon.',
     repoLink: 'https://github.com/Krishgoenka/Brain-Tumor--CNN-model',
     liveLink: 'https://nv-ai.vercel.app/',
   },
