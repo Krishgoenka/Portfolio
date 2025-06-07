@@ -26,8 +26,8 @@
     --secondary: 210 15% 20%;
     --secondary-foreground: 210 10% 85%;
 
-    --accent: 190 80% 70%; /* Light Blue - Accent Color */
-    --accent-foreground: 200 10% 20%; /* Dark foreground for light blue accent elements */
+    --accent: 291 64% 42%; /* Purple - Accent Color (from PRD) */
+    --accent-foreground: 290 60% 95%; /* Light foreground for purple accent elements */
 
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
@@ -59,13 +59,13 @@
     --border: 210 10% 88%; /* Light Gray Border */
     --input: 210 10% 92%; /* Very Light Gray Input BG */
 
-    --primary: 200 90% 55%;  /* Vivid Sky Blue - Keep consistent or adjust if needed */
+    --primary: 200 90% 55%;  /* Vivid Sky Blue - Main Color (Light Blue) */
     --primary-foreground: 210 15% 98%; /* Very Light for on-primary text */
 
     --secondary: 210 15% 90%; /* Light Grayish Blue */
     --secondary-foreground: 210 15% 20%; /* Dark Blue for on-secondary text */
 
-    --accent: 190 80% 65%; /* Slightly darker Light Blue for light mode contrast */
+    --accent: 190 80% 65%; /* Light Blue - Accent Color */
     --accent-foreground: 200 10% 15%; /* Darker for on-accent text */
 
     --destructive: 0 70% 55%; /* Keep consistent or adjust */
