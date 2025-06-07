@@ -70,11 +70,16 @@ export const metadata: Metadata = {
     images: [heroImageUrl],
   },
   icons: {
-    // Consider adding a favicon here if you have one, e.g.,
-    // icon: '/favicon.ico',
-    // apple: '/apple-touch-icon.png',
+    icon: '/favicon.ico', // Standard favicon
+    shortcut: '/favicon.ico', // Older browsers
+    apple: '/apple-touch-icon.png', // Apple touch icon
+    // You can add other sizes or types if needed, e.g.:
+    // other: [
+    //   { rel: 'icon', type: 'image/png', sizes: '32x32', url: '/favicon-32x32.png' },
+    //   { rel: 'icon', type: 'image/png', sizes: '16x16', url: '/favicon-16x16.png' },
+    // ],
   },
-  manifest: '/site.webmanifest', // You would need to create this file
+  manifest: '/site.webmanifest', // Standard PWA manifest file
 };
 
 export default function RootLayout({
@@ -90,8 +95,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
-        {/* Add manifest link if you create one */}
-        {/* <link rel="manifest" href="/site.webmanifest" /> */}
+        {/* The manifest link is now handled by Next.js metadata object */}
         <meta name="google-site-verification" content="1b87uVK69rxeLVBV6Cq-6-IKjw_ejsAa-s3TKrqVRpo" />
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased`} suppressHydrationWarning={true}>
