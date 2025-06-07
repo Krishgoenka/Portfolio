@@ -257,10 +257,15 @@
   }
 }
 
-/* Removed .hero-bg-animated as it's not currently used */
-/*
-.hero-bg-animated {
-  animation: slow-zoom-in-out 40s ease-in-out infinite alternate;
-  will-change: transform; 
+/* Custom styles for Hire Me button in light mode */
+.light .hero-hire-me-button {
+  background-color: hsl(var(--foreground)) !important; /* Dark background */
+  color: hsl(var(--background)) !important; /* Light text */
+  border-color: hsl(var(--foreground)) !important; /* Dark border */
 }
-*/
+
+.light .hero-hire-me-button:hover {
+  background-color: hsl(var(--muted-foreground)) !important; /* Slightly lighter dark on hover */
+  color: hsl(var(--background)) !important; /* Keep light text */
+  border-color: hsl(var(--muted-foreground)) !important; /* Match hover background */
+}

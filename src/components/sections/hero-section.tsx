@@ -66,7 +66,7 @@ export default function HeroSection() {
               <Github className="mr-2 h-5 w-5" /> GitHub
             </a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="neon-glow-accent rounded-full shadow-lg text-lg px-8 py-6 border-accent text-accent hover:bg-accent/10 hover:text-accent-foreground">
+          <Button asChild size="lg" variant="outline" className="hero-hire-me-button neon-glow-accent rounded-full shadow-lg text-lg px-8 py-6 border-accent text-accent hover:bg-accent/10 hover:text-accent-foreground">
             <a href="mailto:goenkakrish02@gmail.com">
               <Mail className="mr-2 h-5 w-5" /> Hire Me
             </a>
@@ -85,4 +85,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
