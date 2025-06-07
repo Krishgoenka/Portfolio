@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Github, Code } from 'lucide-react';
+import { Mail, Linkedin, Github, Code, Twitter } from 'lucide-react';
 
 export default function AppFooter() {
   return (
@@ -37,6 +37,11 @@ export default function AppFooter() {
           <Button asChild variant="outline" size="icon" className="neon-glow-primary rounded-full p-3 border-2 border-primary hover:bg-primary/10">
              <a href="https://github.com/Krishgoenka" target="_blank" rel="noopener noreferrer" aria-label="Krish Goenka's Github Profile">
               <Github className="h-7 w-7" />
+            </a>
+          </Button>
+          <Button asChild variant="outline" size="icon" className="neon-glow-primary rounded-full p-3 border-2 border-primary hover:bg-primary/10">
+            <a href="https://x.com/KrishgoenkaOG" target="_blank" rel="noopener noreferrer" aria-label="Krish Goenka's X (Twitter) Profile">
+              <Twitter className="h-7 w-7" />
             </a>
           </Button>
         </div>
