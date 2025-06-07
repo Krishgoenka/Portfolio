@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
@@ -16,10 +17,64 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
+// SEO Optimized Metadata
+const siteUrl = 'https://yourdomain.com'; // IMPORTANT: Replace with your actual domain
+const heroImageUrl = 'https://drive.google.com/uc?export=view&id=1NX8A_ItLHb3x3JyvlPTngiAewSoBUsy9';
+const siteName = 'Krish Goenka - AI/ML Portfolio';
+const twitterHandle = '@YourTwitterHandle'; // Replace if you have one
+
 export const metadata: Metadata = {
-  title: 'Krish Goenka - AI/ML & Generative AI Enthusiast',
-  description: 'Portfolio of Krish Goenka, an AI/ML & Generative AI Enthusiast, Innovator, and CSE AI student.',
-  keywords: ['Krish Goenka', 'AI', 'ML', 'Generative AI', 'Portfolio', 'CSE', 'Techno India University', 'Innovator'],
+  metadataBase: new URL(siteUrl),
+  title: 'Krish Goenka | AI/ML & Generative AI Portfolio',
+  description: 'Explore the AI/ML & Generative AI portfolio of Krish Goenka, a passionate Computer Science student specializing in Artificial Intelligence and innovative tech solutions. Discover projects, skills, and experience in machine learning, deep learning, NLP, and AI agent development.',
+  keywords: ['Krish Goenka', 'Krish Goenka Portfolio', 'AI Portfolio', 'ML Portfolio', 'Generative AI', 'Artificial Intelligence', 'Machine Learning', 'Deep Learning', 'NLP', 'Computer Vision', 'AI Developer', 'CSE AI Student', 'Techno India University', 'AI Innovator', 'Python', 'TensorFlow', 'LangChain'],
+  authors: [{ name: 'Krish Goenka', url: siteUrl }],
+  creator: 'Krish Goenka',
+  publisher: 'Krish Goenka',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+  openGraph: {
+    title: 'Krish Goenka | AI/ML & Generative AI Portfolio',
+    description: 'Discover Krish Goenka\'s innovative projects and expertise in AI, Machine Learning, and Generative AI. A CSE student passionate about building intelligent solutions.',
+    url: siteUrl,
+    siteName: siteName,
+    images: [
+      {
+        url: heroImageUrl,
+        width: 1200,
+        height: 630,
+        alt: 'Krish Goenka - AI Portfolio Hero Image',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Krish Goenka | AI/ML & Generative AI Portfolio',
+    description: 'Explore Krish Goenka\'s work in AI, Machine Learning, and Generative AI. Passionate CSE student building the future of intelligent systems.',
+    site: twitterHandle, // Optional: if you have a Twitter handle for the site
+    creator: twitterHandle, // Optional: your personal Twitter handle
+    images: [heroImageUrl],
+  },
+  icons: {
+    // Consider adding a favicon here if you have one, e.g.,
+    // icon: '/favicon.ico',
+    // apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest', // You would need to create this file
 };
 
 export default function RootLayout({
@@ -35,6 +90,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+        {/* Add manifest link if you create one */}
+        {/* <link rel="manifest" href="/site.webmanifest" /> */}
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased`} suppressHydrationWarning={true}>
         <ThemeProvider
