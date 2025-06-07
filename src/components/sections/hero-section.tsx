@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowDown } from 'lucide-react';
+import TypingAnimation from '@/components/typing-animation'; // Import TypingAnimation
 
 export default function HeroSection() {
   const [offsetY, setOffsetY] = useState(0);
@@ -14,7 +15,7 @@ export default function HeroSection() {
   const handleScroll = () => {
     if (typeof window !== 'undefined') {
       setOffsetY(window.pageYOffset);
-      if (window.pageYOffset > 100) { // Hide arrow after scrolling down a bit
+      if (window.pageYOffset > 100) { 
         setShowScrollArrow(false);
       } else {
         setShowScrollArrow(true);
@@ -25,7 +26,6 @@ export default function HeroSection() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', handleScroll);
-      // Initial check
       handleScroll();
       return () => window.removeEventListener('scroll', handleScroll);
     }
@@ -34,26 +34,27 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       
-      {/* Static Background Image from Google Drive */}
       <div className="absolute inset-0 w-full h-full -z-10">
         <Image
           src="https://drive.google.com/uc?export=view&id=1NX8A_ItLHb3x3JyvlPTngiAewSoBUsy9"
           alt="Futuristic AI plexus network background"
           fill
-          className="object-cover"
+          className="object-cover object-center" // Ensure image covers and is centered
           priority
           data-ai-hint="abstract plexus network"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
       
-      {/* Text content container */}
       <div className="container relative z-10 px-4 text-left">
-        <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground">
-          Hello, I'm Krish Goenka
-        </h1>
+        <TypingAnimation
+          text="Hello, I'm Krish Goenka"
+          speed={70}
+          className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground hero-text-shadow-effect"
+        />
         
         <p 
-          className="font-headline text-xl sm:text-2xl md:text-3xl text-primary mb-10 float-animation"
+          className="font-headline text-xl sm:text-2xl md:text-3xl text-primary mb-10 float-animation hero-text-shadow-effect"
           style={{ transform: `translateY(${offsetY * 0.1}px)` }} 
         >
           AI/ML Enthusiast & Innovator
@@ -65,7 +66,6 @@ export default function HeroSection() {
           </Link>
         </Button>
       </div>
-       {/* Scroll down arrow */}
        {showScrollArrow && (
          <div 
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-primary z-10 transition-opacity duration-300"

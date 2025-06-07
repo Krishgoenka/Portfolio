@@ -59,21 +59,20 @@
     --border: 210 10% 88%;
     --input: 210 10% 92%;
 
-    --primary: 200 90% 55%; /* Vivid Sky Blue - Main Color */
-    --primary-foreground: 210 15% 98%; /* Lighter for primary buttons */
+    --primary: 200 90% 55%; 
+    --primary-foreground: 210 15% 98%; 
 
     --secondary: 210 15% 90%;
     --secondary-foreground: 210 15% 20%;
 
-    --accent: 190 80% 70%; /* Light Blue - Accent Color */
-    --accent-foreground: 200 10% 15%; /* Darker foreground for light blue accent elements */
+    --accent: 190 80% 70%; 
+    --accent-foreground: 200 10% 15%; 
 
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --ring: 200 90% 60%; /* Ring can often be the same as primary or a slightly brighter primary */
+    --ring: 200 90% 60%; 
 
-    /* Chart colors can remain the same or be adjusted for light theme if needed */
     --chart-1: 200 90% 55%;
     --chart-2: 170 80% 45%;
     --chart-3: 220 70% 65%;
@@ -102,16 +101,22 @@
     right: 0;
     bottom: 0;
     background-image:
-      linear-gradient(hsl(var(--border) / 0.05) 1px, transparent 1px), /* Softer grid lines */
-      linear-gradient(to right, hsl(var(--border) / 0.05) 1px, transparent 1px); /* Softer grid lines */
-    background-size: 2.5rem 2.5rem; /* Grid size */
-    opacity: 0.5; /* Grid opacity */
-    z-index: -30; /* Pushed further back */
+      linear-gradient(hsl(var(--border) / 0.05) 1px, transparent 1px), 
+      linear-gradient(to right, hsl(var(--border) / 0.05) 1px, transparent 1px); 
+    background-size: 2.5rem 2.5rem; 
+    opacity: 0.5; 
+    z-index: -30; 
     pointer-events: none;
   }
 
   section {
     @apply py-16 md:py-24;
+  }
+}
+
+@layer utilities {
+  .hero-text-shadow-effect {
+    text-shadow: 0px 1px 3px hsla(var(--muted), 0.6);
   }
 }
 
@@ -137,25 +142,25 @@
   content: "";
   position: absolute;
   top: 0;
-  left: -150%; /* Start further left to make the shine travel across */
-  width: 75%;   /* Wider shine element */
+  left: -150%; 
+  width: 75%;   
   height: 100%;
   background: linear-gradient(
     120deg,
     hsla(var(--foreground)/0) 0%,
-    hsla(var(--foreground)/0.05) 20%, /* Softer start */
-    hsla(var(--foreground)/0.15) 50%, /* More pronounced peak */
-    hsla(var(--foreground)/0.05) 80%, /* Softer end */
+    hsla(var(--foreground)/0.05) 20%, 
+    hsla(var(--foreground)/0.15) 50%, 
+    hsla(var(--foreground)/0.05) 80%, 
     hsla(var(--foreground)/0) 100%
   );
-  transform: skewX(-25deg); /* Adjust skew for desired effect */
-  transition: left 0.85s cubic-bezier(0.23, 1, 0.32, 1); /* Smoother and slightly faster transition */
-  pointer-events: none; /* Ensure it doesn't block interactions */
-  z-index: 1; /* Ensure it's above the base card content but below interactive elements */
+  transform: skewX(-25deg); 
+  transition: left 0.85s cubic-bezier(0.23, 1, 0.32, 1); 
+  pointer-events: none; 
+  z-index: 1; 
 }
 
 .certificate-shine:hover::before {
-  left: 150%; /* Make it travel further across the card */
+  left: 150%; 
 }
 
 
@@ -239,7 +244,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.03); /* Subtle zoom */
+    transform: scale(1.03); 
   }
   100% {
     transform: scale(1);
@@ -248,6 +253,5 @@
 
 .hero-bg-animated {
   animation: slow-zoom-in-out 40s ease-in-out infinite alternate;
-  will-change: transform; /* Optimize animation performance */
+  will-change: transform; 
 }
-
