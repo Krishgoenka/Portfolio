@@ -24,22 +24,22 @@ export default function AppFooter() {
           I’m passionate about leveraging AI to build innovative solutions. Let’s collaborate and create something impactful.
         </p>
         <div className="flex justify-center items-center space-x-6 mb-10">
-          <Button asChild variant="outline" size="icon" className="neon-glow-primary rounded-full p-3 border-2 border-primary hover:bg-primary/10">
+          <Button asChild variant="outline" size="icon" className="rounded-full border-2 border-primary text-primary hover:bg-primary/10 neon-glow-primary">
             <a href="mailto:goenkakrish02@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email Krish Goenka">
               <Mail className="h-7 w-7" />
             </a>
           </Button>
-          <Button asChild variant="outline" size="icon" className="neon-glow-primary rounded-full p-3 border-2 border-primary hover:bg-primary/10">
+          <Button asChild variant="outline" size="icon" className="rounded-full border-2 border-primary text-primary hover:bg-primary/10 neon-glow-primary">
             <a href="https://www.linkedin.com/in/krish-goenka-" target="_blank" rel="noopener noreferrer" aria-label="Krish Goenka's LinkedIn Profile">
               <Linkedin className="h-7 w-7" />
             </a>
           </Button>
-          <Button asChild variant="outline" size="icon" className="neon-glow-primary rounded-full p-3 border-2 border-primary hover:bg-primary/10">
+          <Button asChild variant="outline" size="icon" className="rounded-full border-2 border-primary text-primary hover:bg-primary/10 neon-glow-primary">
              <a href="https://github.com/Krishgoenka" target="_blank" rel="noopener noreferrer" aria-label="Krish Goenka's Github Profile">
               <Github className="h-7 w-7" />
             </a>
           </Button>
-          <Button asChild variant="outline" size="icon" className="neon-glow-primary rounded-full p-3 border-2 border-primary hover:bg-primary/10">
+          <Button asChild variant="outline" size="icon" className="rounded-full border-2 border-primary text-primary hover:bg-primary/10 neon-glow-primary">
             <a href="https://x.com/KrishgoenkaOG" target="_blank" rel="noopener noreferrer" aria-label="Krish Goenka's X (Twitter) Profile">
               <X className="h-7 w-7" /> {/* Changed from Twitter to X */}
             </a>
