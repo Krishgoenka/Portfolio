@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -8,6 +9,7 @@ interface TypingAnimationProps {
   className?: string;
   cursorClassName?: string;
   onComplete?: () => void;
+  style?: React.CSSProperties; // Added style prop
 }
 
 const TypingAnimation: React.FC<TypingAnimationProps> = ({
@@ -15,7 +17,8 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
   speed = 100,
   className = "",
   cursorClassName = "typing-cursor",
-  onComplete
+  onComplete,
+  style // Destructure style prop
 }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -39,7 +42,7 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
   }, [currentIndex, text, speed, onComplete]);
 
   return (
-    <span className={`${className} ${cursorClassName}`}>
+    <span className={`${className} ${cursorClassName}`} style={style}> {/* Apply style prop */}
       {displayedText}
     </span>
   );

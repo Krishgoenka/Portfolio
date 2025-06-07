@@ -122,7 +122,7 @@
   }
   .light .hero-text-shadow-effect {
     /* Light theme: use a darker shadow for better contrast with light text */
-    text-shadow: 0px 1px 3px hsla(var(--foreground), 0.2); /* Shadow color from light theme's main text color */
+    text-shadow: 0px 1px 3px hsla(var(--foreground), 0.2);
   }
 }
 

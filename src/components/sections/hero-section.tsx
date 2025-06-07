@@ -49,7 +49,8 @@ export default function HeroSection() {
         <TypingAnimation
           text="Hello, I'm Krish Goenka"
           speed={70}
-          className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white hero-text-shadow-effect"
+          className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 hero-text-shadow-effect"
+          style={{ color: 'white' }} // Apply inline style for white color
         />
 
         <p
