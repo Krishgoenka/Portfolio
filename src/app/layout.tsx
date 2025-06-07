@@ -92,6 +92,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
         {/* Add manifest link if you create one */}
         {/* <link rel="manifest" href="/site.webmanifest" /> */}
+        <meta name="google-site-verification" content="1b87uVK69rxeLVBV6Cq-6-IKjw_ejsAa-s3TKrqVRpo" />
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased`} suppressHydrationWarning={true}>
         <ThemeProvider
