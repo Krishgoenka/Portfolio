@@ -50,7 +50,7 @@ export default function HeroSection() {
           text="Hello, I'm Krish Goenka"
           speed={70}
           className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 hero-text-shadow-effect"
-          style={{ color: 'white' }} // Apply inline style for white color
+          style={{ color: 'white !important' as any }}
         />
 
         <p
@@ -78,3 +78,4 @@ export default function HeroSection() {
     </section>
   );
 }
+
