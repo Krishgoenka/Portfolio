@@ -26,8 +26,8 @@
     --secondary: 210 15% 20%;
     --secondary-foreground: 210 10% 85%;
 
-    --accent: 291 64% 42%; /* Purple - Accent Color (from PRD) */
-    --accent-foreground: 290 60% 95%; /* Light foreground for purple accent elements */
+    --accent: 200 80% 65%; /* Brighter, slightly softer Sky Blue - Accent Color (Reverted from Purple) */
+    --accent-foreground: 210 20% 10%; /* Darker for accent buttons (Reverted from Light Purple) */
 
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
@@ -102,11 +102,11 @@
     right: 0;
     bottom: 0;
     background-image:
-      linear-gradient(hsl(var(--border) / 0.05) 1px, transparent 1px), 
-      linear-gradient(to right, hsl(var(--border) / 0.05) 1px, transparent 1px); 
-    background-size: 2.5rem 2.5rem; 
-    opacity: 0.5; 
-    z-index: -30; 
+      linear-gradient(hsl(var(--border) / 0.05) 1px, transparent 1px),
+      linear-gradient(to right, hsl(var(--border) / 0.05) 1px, transparent 1px);
+    background-size: 2.5rem 2.5rem;
+    opacity: 0.5;
+    z-index: -30;
     pointer-events: none;
   }
 
@@ -156,25 +156,25 @@
   content: "";
   position: absolute;
   top: 0;
-  left: -150%; 
-  width: 75%;   
+  left: -150%;
+  width: 75%;
   height: 100%;
   background: linear-gradient(
     120deg,
     hsla(var(--foreground)/0) 0%,
-    hsla(var(--foreground)/0.05) 20%, 
-    hsla(var(--foreground)/0.15) 50%, 
-    hsla(var(--foreground)/0.05) 80%, 
+    hsla(var(--foreground)/0.05) 20%,
+    hsla(var(--foreground)/0.15) 50%,
+    hsla(var(--foreground)/0.05) 80%,
     hsla(var(--foreground)/0) 100%
   );
-  transform: skewX(-25deg); 
-  transition: left 0.85s cubic-bezier(0.23, 1, 0.32, 1); 
-  pointer-events: none; 
-  z-index: 1; 
+  transform: skewX(-25deg);
+  transition: left 0.85s cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .certificate-shine:hover::before {
-  left: 150%; 
+  left: 150%;
 }
 
 
@@ -258,7 +258,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.03); 
+    transform: scale(1.03);
   }
   100% {
     transform: scale(1);
@@ -277,4 +277,3 @@
   color: hsl(var(--background)) !important; /* Keep light text */
   border-color: hsl(var(--muted-foreground)) !important; /* Match hover background */
 }
-
