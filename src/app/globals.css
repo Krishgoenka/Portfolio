@@ -44,35 +44,36 @@
   }
 
   .light {
-    --background: 0 0% 100%;
-    --foreground: 210 20% 9%;
+    --background: 0 0% 100%; /* White */
+    --foreground: 210 20% 9%; /* Dark Blue/Black for text */
 
-    --muted: 210 15% 92%;
-    --muted-foreground: 210 10% 45%;
+    --muted: 210 15% 92%; /* Light Gray */
+    --muted-foreground: 210 10% 45%; /* Medium Gray */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 20% 9%;
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 210 20% 9%; /* Dark Blue/Black */
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 20% 9%;
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 210 20% 9%; /* Dark Blue/Black */
 
-    --border: 210 10% 88%;
-    --input: 210 10% 92%;
+    --border: 210 10% 88%; /* Light Gray Border */
+    --input: 210 10% 92%; /* Very Light Gray Input BG */
 
-    --primary: 200 90% 55%; 
-    --primary-foreground: 210 15% 98%; 
+    --primary: 200 90% 55%;  /* Vivid Sky Blue - Keep consistent or adjust if needed */
+    --primary-foreground: 210 15% 98%; /* Very Light for on-primary text */
 
-    --secondary: 210 15% 90%;
-    --secondary-foreground: 210 15% 20%;
+    --secondary: 210 15% 90%; /* Light Grayish Blue */
+    --secondary-foreground: 210 15% 20%; /* Dark Blue for on-secondary text */
 
-    --accent: 190 80% 70%; 
-    --accent-foreground: 200 10% 15%; 
+    --accent: 190 80% 65%; /* Slightly darker Light Blue for light mode contrast */
+    --accent-foreground: 200 10% 15%; /* Darker for on-accent text */
 
-    --destructive: 0 70% 55%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 70% 55%; /* Keep consistent or adjust */
+    --destructive-foreground: 0 0% 100%; /* White */
 
-    --ring: 200 90% 60%; 
+    --ring: 200 90% 60%;
 
+    /* Charts can remain same or be adjusted */
     --chart-1: 200 90% 55%;
     --chart-2: 170 80% 45%;
     --chart-3: 220 70% 65%;
@@ -116,7 +117,16 @@
 
 @layer utilities {
   .hero-text-shadow-effect {
+    /* Default (dark theme) */
     text-shadow: 0px 1px 3px hsla(var(--muted), 0.6);
+  }
+  .light .hero-text-shadow-effect {
+    /* Light theme: use a darker shadow for better contrast with light text */
+    text-shadow: 0px 1px 3px hsla(var(--foreground), 0.2); /* Shadow color from light theme's main text color */
+  }
+
+  .light .hero-main-title {
+    color: hsl(0 0% 100%); /* White text for hero title in light mode */
   }
 }
 
@@ -251,7 +261,10 @@
   }
 }
 
+/* Removed .hero-bg-animated as it's not currently used */
+/*
 .hero-bg-animated {
   animation: slow-zoom-in-out 40s ease-in-out infinite alternate;
   will-change: transform; 
 }
+*/
