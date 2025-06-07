@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Github, Mail } from 'lucide-react';
 import TypingAnimation from '@/components/typing-animation';
 
 export default function HeroSection() {
@@ -60,11 +60,18 @@ export default function HeroSection() {
           AI/ML Enthusiast & Innovator
         </p>
 
-        <Button asChild size="lg" className="neon-glow-primary rounded-full shadow-lg text-lg px-8 py-6">
-          <Link href="#about">
-            Discover More <ArrowDown className="ml-2 h-5 w-5" />
-          </Link>
-        </Button>
+        <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+          <Button asChild size="lg" className="neon-glow-primary rounded-full shadow-lg text-lg px-8 py-6">
+            <a href="https://github.com/Krishgoenka" target="_blank" rel="noopener noreferrer">
+              <Github className="mr-2 h-5 w-5" /> GitHub
+            </a>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="neon-glow-accent rounded-full shadow-lg text-lg px-8 py-6 border-accent text-accent hover:bg-accent/10 hover:text-accent-foreground">
+            <a href="mailto:goenkakrish02@gmail.com">
+              <Mail className="mr-2 h-5 w-5" /> Hire Me
+            </a>
+          </Button>
+        </div>
       </div>
 
       {showScrollArrow && (
