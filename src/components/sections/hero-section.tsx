@@ -25,7 +25,7 @@ export default function HeroSection() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', handleScroll);
-      handleScroll();
+      handleScroll(); // Initialize on mount
       return () => window.removeEventListener('scroll', handleScroll);
     }
   }, []);
@@ -41,18 +41,15 @@ export default function HeroSection() {
           className="object-cover object-center"
           priority
           data-ai-hint="abstract plexus network"
-          sizes="(max-width: 768px) 100vw, (min-width: 769px) 100vw" // Adjusted sizes for better control
+          sizes="(max-width: 768px) 100vw, (min-width: 769px) 100vw"
         />
       </div>
-
-      {/* Overlay for better text visibility if needed - currently not active */}
-      {/* <div className="absolute inset-0 bg-black/30 z-0"></div> */}
 
       <div className="container relative z-10 px-4 text-center md:text-left">
         <TypingAnimation
           text="Hello, I'm Krish Goenka"
           speed={70}
-          className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground hero-text-shadow-effect hero-main-title"
+          className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white hero-text-shadow-effect"
         />
 
         <p

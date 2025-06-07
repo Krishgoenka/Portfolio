@@ -124,10 +124,6 @@
     /* Light theme: use a darker shadow for better contrast with light text */
     text-shadow: 0px 1px 3px hsla(var(--foreground), 0.2); /* Shadow color from light theme's main text color */
   }
-
-  .light .hero-main-title {
-    color: hsl(0 0% 100%); /* White text for hero title in light mode */
-  }
 }
 
 .neon-glow-primary {
